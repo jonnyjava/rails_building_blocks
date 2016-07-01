@@ -1,0 +1,18 @@
+= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  = f.error_notification
+  #l-login.lc-block.toggled
+    h1.c-red =t('forgot_password')
+    .input-group.m-b-20
+      span.input-group-addon
+        i.zmdi.zmdi-account
+      .fg-line
+      = f.input :email,
+      required: true,
+      autofocus: true,
+      placeholder: t('email'),
+      class: 'form-control',
+        label: false
+    button.btn.btn-login.btn-primary.btn-float
+      i.zmdi.zmdi-arrow-forward
+    .form-actions
+      = render "devise/shared/links"

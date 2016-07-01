@@ -1,0 +1,9 @@
+aside#sidebar.sidebar.c-overflow
+  = render '/shared/profile'
+  ul.main-menu
+    li.active
+      a href="#{root_path}"
+        i.zmdi.zmdi-home
+        = t('home')
+    - if current_user.admin?
+      = render '/layouts/admin_menu'

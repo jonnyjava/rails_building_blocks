@@ -1,0 +1,8 @@
+- if page.current?
+  button.btn.btn-default.waves-effect.active type="button"
+    = page
+- unless page.current?
+  = link_to url, {remote: remote, rel: page.next? ? 'next' : page.prev? ? 'prev' : nil} do
+
+    button.btn.btn-default.waves-effect type="button"
+      = page

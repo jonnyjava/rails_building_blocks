@@ -1,0 +1,41 @@
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.error_notification
+  #l-login.lc-block.toggled
+    h1.c-red =t('register')
+    .input-group.m-b-20
+      span.input-group-addon
+        i.zmdi.zmdi-account
+      .fg-line
+      = f.input :email,
+        required: false,
+        autofocus: true,
+        placeholder: t('email'),
+        class: 'form-control',
+        label: false
+    .input-group.m-b-20
+      span.input-group-addon
+        i.zmdi.zmdi-key
+      .fg-line
+        = f.input :password,
+          required: true,
+          type: 'password',
+          placeholder: t('password'),
+          class: 'form-control',
+          label: false,
+          hint: ( t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length)
+    .input-group.m-b-20
+      span.input-group-addon
+        i.zmdi.zmdi-key
+      .fg-line
+        = f.input :password_confirmation,
+          required: true,
+          type: 'password',
+          placeholder: t('repeat_password'),
+          class: 'form-control',
+          label: false,
+          hint: (t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length)
+    .clearfix
+    button.btn.btn-login.btn-primary.btn-float
+      i.zmdi.zmdi-arrow-forward
+    .form-actions
+      = render "devise/shared/links"

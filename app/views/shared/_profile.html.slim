@@ -1,0 +1,16 @@
+.profile-menu
+  a[href=""]
+    .profile-pic
+      = image_tag('theme/profile-pics/profile-pic-2.jpg', class: 'img-responsive', alt: current_user.name, width: '50px')
+    .profile-info
+      = current_user.decorate.full_name
+      i.zmdi.zmdi-caret-down
+    ul.main-menu
+      li
+        a[href=""]
+          i.zmdi.zmdi-settings
+          = t('settings')
+      li
+        = link_to destroy_user_session_path, method: :delete do
+          i.zmdi.zmdi-time-restore
+          = t('logout')

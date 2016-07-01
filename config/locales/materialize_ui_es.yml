@@ -1,0 +1,43 @@
+es:
+  back_to_index: 'Volver al listado'
+  cancel: 'Cancelar'
+  city: 'Ciudad'
+  clean_search: 'Limpiar form'
+  close: 'Cerrar'
+  confirm: 'Confirmar'
+  country: 'País'
+  delete_selected: 'Borrar seleccionados'
+  edit: 'Modificar'
+  from: 'Desde'
+  home: 'Inicio'
+  kind: 'Tipo'
+  location: 'Localización'
+  logout: 'Cerrar sesión'
+  province: 'Provincia'
+  save: 'Guardar'
+  save_and_continue: 'guardar y continuar'
+  search: 'Buscar'
+  settings: 'Preferencias'
+  show: 'Ver'
+  skip: 'Saltar este paso'
+  step_back: 'Volver atrás'
+  to: 'Hasta'
+  update: 'Actualizar'
+  upload_file: 'subir archivos'
+
+  views:
+    pagination:
+      first: "Primera"
+      last: "Ultima"
+      previous: "Anterior"
+      next: "Siguiente"
+      truncate: ""
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{entry_name} no encontrado"
+          one: "Mostrando <b>1</b> %{entry_name}"
+          other: "Mostrando <b> %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Mostrando %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de <b>%{total}</b> en total"

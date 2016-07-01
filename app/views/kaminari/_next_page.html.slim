@@ -1,0 +1,4 @@
+- unless current_page.last?
+  = link_to url do
+    button.btn.btn-default.waves-effect type="button"
+      =t('views.pagination.next').html_safe
