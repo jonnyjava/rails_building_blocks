@@ -1,0 +1,80 @@
+recipes:
+- core
+- setup
+- readme
+- gems
+- tests
+- email
+- frontend
+- extras
+- deployment
+- init
+- devise
+- locale
+- pages
+- gemset
+- custom_locales
+- custom_initializers
+
+prefs:
+  :apps4: 3
+  :pages: 5
+  :announcements: nil
+  :dev_webserver: puma
+  :prod_webserver: same
+  :database: mysql
+  :templates: slim
+  :tests: rspec
+  :integration: none
+  :fixtures: factory_girl
+  :frontend: none
+  :form_builder: simple_form
+  :email: none
+  :authentication: devise
+  :devise_modules: 2
+  :authorization: pundit
+  :continuous_testing: none
+  :dashboard: none
+  :disable_turbolinks: false
+  :ban_spiders: true
+  :github: false
+  :local_env_file: 1
+  :quiet_assets: true
+  :better_errors: true
+  :pry: false
+  :rubocop: true
+  :deployment: 3
+  :mysql_username: root
+  :mysql_password: Pixels2k16
+  :drop_database: true
+  :locale: es
+  :analytics: 1
+
+gems:
+  - kaminari
+  - rails-observers
+  - simple_form
+  - bower-rails
+  - slim-rails
+  - draper
+  - rspec-rails
+  - shoulda-matchers
+  - factory_girl_rails
+  - faker
+  - timecop
+  - better_errors
+  - binding_of_caller
+  - spring-commands-rspec
+  - rubocop
+  - quiet_assets
+  - capistrano
+  - capistrano-rails
+  - capistrano-passenger
+  - capistrano-rvm
+  - capistrano-linked-files
+  - database_cleaner
+  - fuubar
+
+args:
+  :skip_test_unit: yes
+  :skip_active_record: false
