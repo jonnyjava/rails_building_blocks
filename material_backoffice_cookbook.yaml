@@ -15,6 +15,10 @@ recipes:
 - gemset
 - custom_locales
 - custom_initializers
+- custom_devise_views
+- custom_kaminari_views
+- custom_layouts
+- custom_shared_views
 
 prefs:
   :apps4: 3
