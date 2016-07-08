@@ -20,6 +20,7 @@ recipes:
 - custom_layouts
 - custom_shared_views
 - custom_rails_generators
+- custom_spec_helpers_and_supports
 
 prefs:
   :apps4: 3
