@@ -17,6 +17,7 @@ recipes:
 - custom_initializers
 - custom_devise_views
 - custom_kaminari_views
+- custom_bootstrap_inputs
 - custom_layouts
 - custom_shared_views
 - custom_rails_generators
