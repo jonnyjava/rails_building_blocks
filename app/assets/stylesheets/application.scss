@@ -1,0 +1,121 @@
+// THEME VENDOR
+//= require bower_components/fullcalendar/dist/fullcalendar.min.css
+//= require bower_components/animate.css/animate.min.css
+//= require bower_components/bootstrap-sweetalert/lib/sweet-alert.css
+//= require bower_components/bootstrap-select/dist/css/bootstrap-select.css
+//= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css
+//= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css
+//= require bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+// THEME
+//= require app/theme
+//= require summernote/dist/summernote.css
+
+// RED skin
+[data-current-skin="red"] {
+  background-color: #F44336;
+}
+
+[data-current-skin="red"] .ss-icon {
+  color: #F44336;
+}
+.fg-line:not([class*=has-]):after {
+  background: #F44336;
+}
+.radio .input-helper::after{
+  background-color: #F44336;
+}
+
+.datepicker table td.active:before {
+  background-color: #F44336;
+}
+
+.datepicker table thead tr:first-child th {
+  background: #F44336;
+}
+
+.datepicker table thead tr:last-child:not(:only-child) {
+  background: #FF5D5D;/*(2196F3-167ccc)+F44336*/
+}
+
+.bootstrap-select > .btn-default:not(.disabled):after,
+.bootstrap-select > .btn-default:not(.readonly):after {
+  background: #F44336;
+}
+
+@media (max-width: 767px) {
+  [data-current-skin="red"] .ha-menu {
+    background: #F44336;
+  }
+}
+
+body.login-content::before {
+  background: #F44336 none repeat scroll 0 0;
+}
+
+button.confirm.btn.btn-lg.btn-warning {
+  background-color: #F44336;
+}
+
+/*SMALL FIXES*/
+.col-xs-12 .dl-horizontal dt{
+  overflow: visible;
+  width: 25%;
+}
+
+.col-xs-6 .dl-horizontal dt{
+  overflow: visible;
+  width: 50%;
+}
+
+.lc-block{
+  width: 600px;
+}
+
+#profile-main {
+  min-height: 650px;
+  padding-bottom: 20px;
+}
+
+#profile-main .pm-overview {
+  background-color: transparent;
+}
+
+.input-group-addon{
+  padding-top: 1.5em;
+}
+
+.radio_label{
+  min-width: 4.25em;
+}
+
+.fileinput .fileinput-preview{
+  width: 250px;
+  min-height: 250px;
+  height: auto;
+}
+
+.profile-menu > a .profile-info{
+  margin-top: 0;
+}
+/*added classes*/
+.submenu-dropdown{
+  width: 100%;
+}
+.submenu-dropdown li{
+  clear: both;
+  display: block;
+  padding: 0.75em;
+}
+.hospital_logo{
+  width: 95%;
+  padding: 1%;
+}
+.p-1 {
+  padding: 1px !important;
+}
+.p-8 {
+  padding: 8px !important;
+}
+.v-middle{
+  vertical-align: middle !important;
+}
