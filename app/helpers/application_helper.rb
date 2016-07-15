@@ -43,4 +43,41 @@ module ApplicationHelper
       class: 'selectpicker'
     }
   end
+
+  def radiobuttons_config(collection)
+    {
+      collection: collection,
+      label_method: :first,
+      value_method: :last,
+      as: :material_radio_buttons,
+      label: false
+    }
+  end
+
+  def material_list_element_component(label, content)
+    content_tag :dl, class: 'dl-horizontal' do
+      concat(content_tag(:dt, label))
+      concat(content_tag(:dd, content))
+    end
+  end
+
+  def material_form_component(t_label, icon, f_field)
+    content_tag :div, class: 'input-group' do
+      concat(material_icon_component(icon))
+      concat(material_input_component(t_label, f_field))
+    end
+  end
+
+  def material_icon_component(icon)
+    content_tag :span, class: 'input-group-addon' do
+      content_tag :i, '', class: "zmdi zmdi-#{icon}"
+    end
+  end
+
+  def material_input_component(t_label, f_field)
+    content_tag :div, class: 'fg-line' do
+      concat(content_tag(:label, t_label))
+      concat(f_field)
+    end
+  end
 end
