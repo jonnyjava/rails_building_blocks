@@ -23,6 +23,7 @@ recipes:
 - custom_rails_generators
 - custom_spec_helpers_and_supports
 - custom_application_helper
+- custom_devise_routes
 
 prefs:
   :apps4: 3
