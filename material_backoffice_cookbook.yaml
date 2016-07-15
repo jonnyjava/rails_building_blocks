@@ -25,6 +25,7 @@ recipes:
 - custom_application_helper
 - custom_devise_routes
 - custom_assets
+- custom_seeds
 
 prefs:
   :apps4: 3
