@@ -6,7 +6,7 @@ stage_three do
   copy_from_repo 'app/assets/javascripts/shared.js.coffee', repo: repo
   copy_from_repo 'app/assets/javascripts/theme/functions.js', repo: repo
   copy_from_repo 'app/assets/stylesheets/application.scss', repo: repo
-  copy_from_repo '/app/assets/stylesheets/app/theme.scss', repo: repo
+  copy_from_repo 'app/assets/stylesheets/material_ui/theme.scss', repo: repo
   remove_file 'app/assets/stylesheets/application.css'
 end
 

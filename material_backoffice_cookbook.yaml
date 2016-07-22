@@ -24,8 +24,8 @@ recipes:
 - custom_spec_helpers_and_supports
 - custom_application_helper
 - custom_devise_routes
-- custom_assets
 - custom_seeds
+- custom_assets
 
 prefs:
   :apps4: 3
