@@ -26,6 +26,8 @@ recipes:
 - custom_devise_routes
 - custom_seeds
 - custom_assets
+- materialize_material_zip_downloader
+- materialize_fonts_zip_downloader
 
 prefs:
   :apps4: 3
