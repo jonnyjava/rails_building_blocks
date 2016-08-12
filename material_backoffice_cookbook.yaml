@@ -13,6 +13,7 @@ recipes:
 - locale
 - pages
 - gemset
+- custom_application_initializer
 - custom_locales
 - custom_initializers
 - custom_devise_views
