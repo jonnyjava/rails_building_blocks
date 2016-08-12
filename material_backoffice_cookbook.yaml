@@ -26,6 +26,7 @@ recipes:
 - custom_devise_routes
 - custom_seeds
 - custom_assets
+- custom_rubocop_config
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader
 
