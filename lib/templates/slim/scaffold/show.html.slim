@@ -1,0 +1,23 @@
+- content_for :main_view do
+
+  .row.m-15
+    .col-xs-12.pmb-block
+      .pmbb-header
+        h2
+          i.zmdi.zmdi-circle.m-r-15
+          = t('<%= singular_table_name %>')
+      .pmbb-body.p-l-30
+        .pmbb-view
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      = material_list_element_component(t('<%= attribute.name %>'), @<%= singular_table_name %>.<%= attribute.name %>)
+    <% end -%>
+
+  .row.m-10
+    .col-xs-12.text-right
+      = render 'shared/go_to_edit', destination: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
+      = render 'shared/back_to_index', destination: <%= plural_table_name %>_path
+
+  .row
+    br
+
+= render 'layouts/main_layout', title: "#{t('<%= singular_table_name %>')}"

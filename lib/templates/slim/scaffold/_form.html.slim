@@ -1,0 +1,13 @@
+= simple_form_for(@<%= singular_table_name %>) do |f|
+  = f.error_notification
+  .row.m-10
+<%- attributes.each do |attribute| -%>
+    .col-xs-4
+      - f_field = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, label: false
+      = material_form_component(t('<%= attribute.name %>'), 'circle', f_field)
+<%- end -%>
+
+  = render 'shared/submit_form'
+
+  .row.m-0
+    hr

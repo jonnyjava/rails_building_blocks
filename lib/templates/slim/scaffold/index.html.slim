@@ -1,0 +1,31 @@
+- content_for :main_view do
+  table.table.table-bordered.table-striped
+    thead
+      tr
+  <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      th <%= attribute.human_name %>
+  <% end -%>
+      th
+
+    tbody
+      tr
+        - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      td= <%= singular_table_name %>.<%= attribute.name %>
+    <% end -%>
+      td
+            = render 'shared/show_button', destination: <%= singular_table_name %>
+            = render 'shared/edit_button', destination: edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+            = render 'shared/delete', destination: <%= singular_table_name %>
+
+  .row.m-10
+    .col-xs-12.text-right
+      = render 'shared/go_to_new', destination: new_<%= singular_table_name %>_path, object: '<%= singular_table_name %>'
+
+  .row.m-0
+    .col-xs-12
+      hr
+
+  = paginate @<%= plural_table_name %>
+
+= render 'layouts/main_layout', title: t('<%= singular_table_name %>')

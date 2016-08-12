@@ -1,0 +1,9 @@
+- content_for :main_view do
+
+  - content_for :form_buttons
+    = render 'shared/back_to_index', destination: <%= plural_table_name %>_path
+    = render 'shared/go_to_show', destination: @<%= singular_table_name %>
+
+  = render 'form'
+
+= render 'layouts/main_layout', title: "#{t('editing_<%= singular_table_name %>')}"
