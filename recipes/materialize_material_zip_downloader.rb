@@ -13,6 +13,10 @@ stage_three do
   end
   remove_file 'vendor/assets.zip'
   remove_file 'vendor/__MACOSX'
+
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add vendor theme"'
 end
 
 __END__
@@ -21,6 +25,6 @@ name: materialize_material_zip_downloader
 description: "Downloads and uncompress vendor assets zipfile for materialize theme"
 author: jonnyjava.net
 
-category: homemade
+category: material_ui_theme
 requires: [extras]
 run_after: [extras]

@@ -15,6 +15,9 @@ stage_three do
   copy_from_repo 'app/views/shared/_search_button.html.slim', repo: repo
   copy_from_repo 'app/views/shared/_show_button.html.slim', repo: repo
   copy_from_repo 'app/views/shared/_submit_form.html.slim', repo: repo
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add shared views"'
 end
 
 __END__
@@ -23,6 +26,6 @@ name: custom_shared_views
 description: "Clone shared_views from repo"
 author: jonnyjava.net
 
-category: homemade
+category: material_ui_theme
 requires: [extras]
 run_after: [extras]

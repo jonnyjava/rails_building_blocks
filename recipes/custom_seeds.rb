@@ -4,6 +4,10 @@ stage_three do
   copy_from_repo 'app/d/seeds.rb', repo: repo
 end
 
+stage_four do
+  say_recipe 'RUNNING SEEDS'
+  run 'bundle exec rake db:seed'
+end
 __END__
 
 name: custom_seeds

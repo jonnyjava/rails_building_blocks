@@ -9,6 +9,9 @@ stage_three do
   remove_file'app/views/layouts/_nav_links_for_auth.html.erb'
   remove_file'app/views/layouts/_navigation_links.html.erb'
   remove_file'app/views/layouts/application.html.erb'
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add material_ui layout"'
 end
 
 __END__
@@ -17,6 +20,6 @@ name: custom_layouts
 description: "Clone layouts from repo"
 author: jonnyjava.net
 
-category: homemade
+category: material_ui_theme
 requires: [extras]
 run_after: [extras]

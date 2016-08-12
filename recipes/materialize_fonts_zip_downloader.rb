@@ -12,6 +12,10 @@ stage_three do
     end
   end
   remove_file 'app/assets/fonts.zip'
+
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add fonts"'
 end
 
 __END__
@@ -20,6 +24,6 @@ name: materialize_fonts_zip_downloader
 description: "Downloads and uncompress font zipfile for materialize theme"
 author: jonnyjava.net
 
-category: homemade
+category: material_ui_theme
 requires: [extras]
 run_after: [extras]

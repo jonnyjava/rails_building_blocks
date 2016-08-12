@@ -11,6 +11,9 @@ stage_three do
   remove_file 'spec/support/devise.rb'
   remove_file 'spec/support/factory_girl.rb'
   remove_file 'spec/support/helpers.rb'
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add spec helpers and support macros"'
 end
 
 __END__

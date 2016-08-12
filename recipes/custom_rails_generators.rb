@@ -4,6 +4,9 @@ stage_three do
   copy_from_repo 'lib/templates/rails/scaffold_controller/controller.rb', repo: repo
   copy_from_repo 'lib/templates/rspec/scaffold/controller_spec.rb', repo: repo
   copy_from_repo 'lib/templates/rspec/scaffold/routing_spec.rb', repo: repo
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add generators"'
 end
 
 __END__

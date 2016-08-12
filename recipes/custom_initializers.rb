@@ -6,6 +6,9 @@ stage_three do
   copy_from_repo 'config/initializers/simple_form.rb', repo: repo
   copy_from_repo 'config/initializers/simple_form_bootstrap.rb', repo: repo
   copy_from_repo 'config/initializers/wrap_parameters.rb', repo: repo
+  ### GIT ###
+  git :add => '. -A'
+  git :commit => '-qm "rails_apps_composer: add initializers"'
 end
 
 __END__
