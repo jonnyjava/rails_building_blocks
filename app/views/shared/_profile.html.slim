@@ -3,7 +3,7 @@
     .profile-pic
       = image_tag('theme/profile-pics/profile-pic-2.jpg', class: 'img-responsive', alt: current_user.name, width: '50px')
     .profile-info
-      = current_user.decorate.full_name
+      = current_user.name
       i.zmdi.zmdi-caret-down
     ul.main-menu
       li

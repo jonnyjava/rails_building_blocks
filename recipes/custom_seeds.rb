@@ -1,7 +1,7 @@
 stage_three do
   say_recipe 'CUSTOM SEEDS'
   repo = 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
-  copy_from_repo 'app/d/seeds.rb', repo: repo
+  copy_from_repo 'db/seeds.rb', repo: repo
 end
 
 stage_four do
