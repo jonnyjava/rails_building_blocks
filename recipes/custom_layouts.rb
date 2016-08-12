@@ -4,6 +4,7 @@ stage_three do
   copy_from_repo 'app/views/layouts/_admin_menu.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_container.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_menu_panel.html.slim', repo: repo
+  copy_from_repo 'app/views/layouts/_main_layout.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/application.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/devise.html.slim', repo: repo
   remove_file'app/views/layouts/_nav_links_for_auth.html.erb'
