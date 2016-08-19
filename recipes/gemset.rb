@@ -1,4 +1,4 @@
-stage_three do
+#stage_two do
   if which("rvm")
      say_wizard "RECIPE CREATING PROJECT-SPECIFIC RVM GEMSET AND .RVMRC"
      # using the rvm Ruby API, see:
@@ -55,7 +55,7 @@ stage_three do
    else
      say_wizard "WARNING! RVM does not appear to be available."
    end
-end
+#end
 stage_four do
   ### GIT ###
   git :add => '. -A'

@@ -2,7 +2,8 @@ recipes:
 - core
 - setup
 - readme
-- gems
+- gemset
+- custom_gemfile
 - tests
 - email
 - frontend
@@ -12,7 +13,6 @@ recipes:
 - devise
 - locale
 - pages
-- gemset
 - custom_application_initializer
 - custom_locales
 - custom_initializers
@@ -60,35 +60,11 @@ prefs:
   :rubocop: true
   :deployment: 3
   :mysql_username: root
-  :mysql_password: Pixels2k16
+  :mysql_password: Pixels2k12
   :drop_database: true
   :locale: es
   :analytics: 1
-
-gems:
-  - kaminari
-  - rails-observers
-  - simple_form
-  - bower-rails
-  - slim-rails
-  - draper
-  - rspec-rails
-  - shoulda-matchers
-  - factory_girl_rails
-  - faker
-  - timecop
-  - better_errors
-  - binding_of_caller
-  - spring-commands-rspec
-  - rubocop
-  - quiet_assets
-  - capistrano
-  - capistrano-rails
-  - capistrano-passenger
-  - capistrano-rvm
-  - capistrano-linked-files
-  - database_cleaner
-  - fuubar
+  :jsruntime: false
 
 args:
   :skip_test_unit: yes
