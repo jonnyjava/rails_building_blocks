@@ -71,86 +71,30 @@ git :commit => '-qm "rails_apps_composer: Gemfile"' if prefer :git, true
 stage_two do
   say_wizard "recipe stage two"
   say_wizard "configuring database"
-    if prefer :database, 'mysql'
       mysql_username = prefs[:mysql_username] || ask_wizard("Username for MySQL? (leave blank to use the app name)")
-      if mysql_username.blank?
-        gsub_file "config/database.yml", /username: .*/, "username: #{app_name}"
-      else
-        gsub_file "config/database.yml", /username: .*/, "username: #{mysql_username}"
-        mysql_password = prefs[:mysql_password] || ask_wizard("Password for MySQL user #{mysql_username}?")
-        gsub_file "config/database.yml", /password:/, "password: #{mysql_password}"
-        say_wizard "set config/database.yml for username/password #{mysql_username}/#{mysql_password}"
-      end
+      gsub_file "config/database.yml", /username: .*/, "username: #{mysql_username}"
+      mysql_password = prefs[:mysql_password] || ask_wizard("Password for MySQL user #{mysql_username}?")
+      gsub_file "config/database.yml", /password: [a-z 0-9]*/i, "password: #{mysql_password}"
+      say_wizard "set config/database.yml for username/password #{mysql_username}/#{mysql_password}"
       gsub_file "config/database.yml", /database: myapp_development/, "database: #{app_name}_development"
       gsub_file "config/database.yml", /database: myapp_test/,        "database: #{app_name}_test"
       gsub_file "config/database.yml", /database: myapp_production/,  "database: #{app_name}_production"
-    end
-    unless prefer :database, 'sqlite'
-        run 'bundle exec rake db:drop'
-    end
+    run 'bundle exec rake db:drop'
     run 'bundle exec rake db:create:all'
     ## Git
     git :add => '-A' if prefer :git, true
     git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true
 end
 
-### GENERATORS ###
-stage_two do
-  say_wizard "recipe stage two"
-  say_wizard "running generators"
-  ## Form Builder
-  if prefer :form_builder, 'simple_form'
-    case prefs[:frontend]
-      when 'bootstrap3'
-        say_wizard "---------------------------------------------------------------------recipe installing simple_form for use with Bootstrap"
-        generate 'simple_form:install --bootstrap'
-      else
-        say_wizard "---------------------------------------------------------------------recipe installing simple_form"
-        generate 'simple_form:install'
-    end
-  end
-  ## Figaro Gem
-  if prefer :local_env_file, 'figaro'
-    run 'figaro install'
-    gsub_file 'config/application.yml', /# PUSHER_.*\n/, ''
-    gsub_file 'config/application.yml', /# STRIPE_.*\n/, ''
-    prepend_to_file 'config/application.yml' do <<-FILE
-# Add account credentials and API keys here.
-# See http://railsapps.github.io/rails-environment-variables.html
-# This file should be listed in .gitignore to keep your settings secret!
-# Each entry sets a local environment variable.
-# For example, setting:
-# GMAIL_USERNAME: Your_Gmail_Username
-# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
-
-FILE
-    end
-  end
-  ## Foreman Gem
-  if prefer :local_env_file, 'foreman'
-    create_file '.env' do <<-FILE
-# Add account credentials and API keys here.
-# This file should be listed in .gitignore to keep your settings secret!
-# Each entry sets a local environment variable.
-# For example, setting:
-# GMAIL_USERNAME=Your_Gmail_Username
-# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
-
-FILE
-    end
-    create_file 'Procfile', "web: bundle exec rails server -p $PORT\n" if prefer :prod_webserver, 'thin'
-    create_file 'Procfile', "web: bundle exec unicorn -p $PORT\n" if prefer :prod_webserver, 'unicorn'
-    create_file 'Procfile', "web: bundle exec passenger start -p $PORT\n" if prefer :prod_webserver, 'passenger_standalone'
-    if (prefs[:dev_webserver] != prefs[:prod_webserver])
-      create_file 'Procfile.dev', "web: bundle exec rails server -p $PORT\n" if prefer :dev_webserver, 'thin'
-      create_file 'Procfile.dev', "web: bundle exec unicorn -p $PORT\n" if prefer :dev_webserver, 'unicorn'
-      create_file 'Procfile.dev', "web: bundle exec passenger start -p $PORT\n" if prefer :dev_webserver, 'passenger_standalone'
-    end
-  end
-  ## Git
-  git :add => '-A' if prefer :git, true
-  git :commit => '-qm "rails_apps_composer: generators"' if prefer :git, true
-end
+# ### GENERATORS ###
+# stage_two do
+#   say_wizard "recipe stage two"
+#   say_wizard "running simpleform generator"
+#   generate 'simple_form:install'
+#   ## Git
+#   git :add => '-A' if prefer :git, true
+#   git :commit => '-qm "rails_apps_composer: generators"' if prefer :git, true
+# end
 
 __END__
 
