@@ -40,7 +40,8 @@ add_gem 'spring', group: :development
 add_gem 'better_errors', group: :development
 add_gem 'binding_of_caller', group: :development
 add_gem 'spring-commands-rspec', group: :development
-add_gem 'rubocop', group: :development, require: false
+add_gem 'rubocop', '~> 0.42.0', group: :development, require: false
+add_gem 'scss_lint', group: :development, require: false
 add_gem 'capistrano', group: :development
 add_gem 'capistrano-linked-files', group: :development
 add_gem 'capistrano-passenger', group: :development
