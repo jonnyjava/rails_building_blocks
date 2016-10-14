@@ -1,14 +1,12 @@
 doctype html
 html
   head
-    title
-      | This app needs a Title
+    title = t('app_title')
     meta[name="viewport" content="width=device-width, initial-scale=1"]
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = content_for :head_css
-
     = csrf_meta_tags
-  body[class="app #{body_classes(params)} #{@body_class}"]
+  body.toggled.sw-toggled
   header#header.clearfix[data-current-skin="red"]
     ul.header-inner
       li#menu-trigger[data-trigger="#sidebar"]
@@ -16,66 +14,19 @@ html
           .line.top
           .line.center
           .line.bottom
-      li.logo.hidden-xs
-        a href="index.html" = t('welcome')
+      li.hidden-xs
+        = link_to dashboard_index_path, class: "m-l-10" do
+          = image_tag('logo.png')
       li.pull-right
         ul.top-menu
           li.dropdown
-            a[data-toggle="dropdown" href=""]
-              i.tm-icon.zmdi.zmdi-email
-              i.tmn-counts.bgm-blue
-                | 6
-            .dropdown-menu.dropdown-menu-lg.pull-right
-              .listview
-                .lv-header Messages
-                .lv-body
-                  a.lv-item href=""
-                    .media
-                      .pull-left
-                        = image_tag('theme/profile-pics/1.jpg', class: 'lv-img-sm')
-                      .media-body
-                        .lv-title David Belle
-                        small.lv-small Cum sociis natoque penatibus et magnis dis parturient montes
-                  a.lv-item href=""
-                    .media
-                      .pull-left
-                        = image_tag('theme/profile-pics/2.jpg', class: 'lv-img-sm')
-                      .media-body
-                        .lv-title Jonathan Morris
-                        small.lv-small Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel
-                a.lv-footer href="" View All
-          li.dropdown
-            a[data-toggle="dropdown" href=""]
-              i.tm-icon.zmdi.zmdi-notifications
-              i.tmn-counts.bgm-blue 9
-            .dropdown-menu.dropdown-menu-lg.pull-right
-              #notifications.listview
-                .lv-header  Notification
-                  ul.actions
-                    li.dropdown
-                      a[href="" data-clear="notification"]
-                        i.zmdi.zmdi-check-all
-                .lv-body
-                  a.lv-item href=""
-                    .media
-                      .pull-left
-                        = image_tag 'theme/profile-pics/1.jpg', class: 'lv-img-sm'
-                      .media-body
-                        .lv-title
-                          | David Belle
-                        small.lv-small Cum sociis natoque penatibus et magnis dis parturient montes
-                  a.lv-item href=""
-                    .media
-                      .pull-left
-                        = image_tag 'theme/profile-pics/2.jpg', class: 'lv-img-sm'
-                      .media-body
-                        .lv-title Jonathan Morris
-                        small.lv-small Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel
-                a.lv-footer href="" View Previous
-    #top-search-wrap
-      .tsw-inner
-        i#top-search-close.zmdi.zmdi-arrow-left
-        input[type="text"]
+            = link_to destroy_user_session_path, method: :delete do
+              i.tm-icon.zmdi.zmdi-power
+
+      li.pull-right#toggle-width
+        .toggle-switch
+          input#tw-switch type='checkbox' hidden='hidden' checked='true'
+          label.ts-helper for='tw-switch'
   section#main[data-layout="layout-1"]
     = render 'layouts/menu_panel'
     = yield
