@@ -15,15 +15,6 @@ gsub_file 'Gemfile', /^$\n/, ''
 gsub_file 'Gemfile', /gem 'spring-watcher-listen',\s+'~> 2.0.0'/, ''
 gsub_file 'Gemfile', /gem 'listen',\s+'~> 3.0.5'/, ''
 
-add_gem 'rspec-rails', group: [:development, :test]
-add_gem 'factory_girl_rails', group: [:development, :test]
-add_gem 'faker', group: [:development, :test]
-add_gem 'byebug', group: [:development, :test]
-add_gem 'shoulda-matchers', group: [:development, :test], require: false
-
-add_gem 'database_cleaner', group: [:test]
-add_gem 'fuubar', group: [:test]
-
 add_gem 'bower-rails'
 add_gem 'devise'
 add_gem 'draper'
@@ -33,6 +24,15 @@ add_gem 'ransack'
 add_gem 'simple_form'
 add_gem 'slim-rails'
 
+## test gems
+add_gem 'rspec-rails', group: [:development, :test]
+add_gem 'factory_girl_rails', group: [:development, :test]
+add_gem 'faker', group: [:development, :test]
+add_gem 'byebug', group: [:development, :test]
+add_gem 'shoulda-matchers', group: [:development, :test], require: false
+add_gem 'database_cleaner', group: [:test]
+add_gem 'fuubar', group: [:test]
+
 add_gem 'puma', group: :development
 add_gem 'quiet_assets', group: :development
 add_gem 'web-console', '~> 2.0', group: :development
@@ -40,13 +40,22 @@ add_gem 'spring', group: :development
 add_gem 'better_errors', group: :development
 add_gem 'binding_of_caller', group: :development
 add_gem 'spring-commands-rspec', group: :development
-add_gem 'rubocop', '~> 0.42.0', group: :development, require: false
-add_gem 'scss_lint', group: :development, require: false
+
+## deploy
 add_gem 'capistrano', group: :development
 add_gem 'capistrano-linked-files', group: :development
 add_gem 'capistrano-passenger', group: :development
 add_gem 'capistrano-rails', group: :development
 add_gem 'capistrano-rvm', group: :development
+
+## quality gems
+add_gem 'rubocop', '~> 0.43.0', group: :development, require: false
+add_gem 'rubocop-rspec', group: :development
+add_gem 'bullet', group: :development
+add_gem 'traceroute', group: :development, git: 'git://github.com/distributedlife/traceroute'
+add_gem 'rack-mini-profiler', group: :development, require: false
+add_gem 'rubycritic', group: :development, require: false
+add_gem 'scss_lint', group: :development, require: false
 
 ## Database Adapter
 gsub_file 'Gemfile', /gem 'sqlite3'\n/, '' unless prefer :database, 'sqlite'

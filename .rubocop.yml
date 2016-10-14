@@ -1,10 +1,12 @@
 # This is the configuration used to check the rubocop source code.
-
 #inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
 
 AllCops:
   Exclude:
     - 'config/initializers/*'
+    - 'config/deploy/*'
+    - 'config/deploy.rb'
     - 'vendor/**/*'
     - 'tmp/**/*'
     - 'lib/**/*'
@@ -33,3 +35,15 @@ Documentation:
 Style/PredicateName:
   NamePrefix:
     - have_
+
+RSpec/NestedGroups:
+  MaxNesting: 4
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/ExpectActual:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false

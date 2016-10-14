@@ -1,0 +1,7 @@
+exclude_paths:
+  - db
+  - lib
+IrresponsibleModule:
+  enabled: false
+UncommunicativeVariableName:
+  enabled: false

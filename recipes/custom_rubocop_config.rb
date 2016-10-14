@@ -3,6 +3,8 @@ stage_three do
   repo = 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
   copy_from_repo '.rubocop.yml', repo: repo
   copy_from_repo '.scss-lint.yml', repo: repo
+  copy_from_repo '.reek', repo: repo
+  copy_from_repo '.traceroute', repo: repo
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: add custom rubocop config"'

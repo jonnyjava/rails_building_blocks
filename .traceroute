@@ -1,0 +1,6 @@
+ignore_unreachable_actions:
+- ^devise/
+- devise#_prefixes
+- application#current_user
+ignore_unused_routes:
+- ^devise/
