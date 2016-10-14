@@ -3,119 +3,165 @@
 //= require bower_components/animate.css/animate.min.css
 //= require bower_components/bootstrap-sweetalert/lib/sweet-alert.css
 //= require bower_components/bootstrap-select/dist/css/bootstrap-select.css
-//= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css
+//= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font
 //= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css
 //= require bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
 // THEME
-//= require material_ui/theme
 //= require summernote/dist/summernote.css
+//= require app/theme
 
-// RED skin
-[data-current-skin="red"] {
-  background-color: #F44336;
-}
+@import 'corporate-skin';
 
-[data-current-skin="red"] .ss-icon {
-  color: #F44336;
-}
-.fg-line:not([class*=has-]):after {
-  background: #F44336;
-}
-.radio .input-helper::after{
-  background-color: #F44336;
-}
-
-.datepicker table td.active:before {
-  background-color: #F44336;
-}
-
-.datepicker table thead tr:first-child th {
-  background: #F44336;
-}
-
-.datepicker table thead tr:last-child:not(:only-child) {
-  background: #FF5D5D;/*(2196F3-167ccc)+F44336*/
-}
-
-.bootstrap-select > .btn-default:not(.disabled):after,
-.bootstrap-select > .btn-default:not(.readonly):after {
-  background: #F44336;
-}
-
-@media (max-width: 767px) {
-  [data-current-skin="red"] .ha-menu {
-    background: #F44336;
-  }
-}
-
-body.login-content::before {
-  background: #F44336 none repeat scroll 0 0;
-}
-
-button.confirm.btn.btn-lg.btn-warning {
-  background-color: #F44336;
-}
-
-/*SMALL FIXES*/
-.col-xs-12 .dl-horizontal dt{
+//SMALL FIXES
+.col-xs-12 .dl-horizontal dt {
   overflow: visible;
   width: 25%;
 }
 
-.col-xs-6 .dl-horizontal dt{
+.col-xs-6 .dl-horizontal dt {
   overflow: visible;
   width: 50%;
 }
 
-.lc-block{
+.lc-block {
   width: 600px;
 }
 
 #profile-main {
   min-height: 650px;
   padding-bottom: 20px;
+
+  .pm-overview {
+    background-color: transparent;
+  }
 }
 
-#profile-main .pm-overview {
-  background-color: transparent;
-}
-
-.input-group-addon{
+.input-group-addon {
   padding-top: 1.5em;
 }
 
-.radio_label{
+.radio-label {
   min-width: 4.25em;
 }
 
-.fileinput .fileinput-preview{
-  width: 250px;
-  min-height: 250px;
+.fileinput .fileinput-preview {
   height: auto;
+  min-height: 250px;
+  width: 250px;
 }
 
-.profile-menu > a .profile-info{
-  margin-top: 0;
-}
-/*added classes*/
-.submenu-dropdown{
+//ADDED CLASSES
+.submenu-dropdown {
   width: 100%;
+
+  li {
+    clear: both;
+    display: block;
+    padding: .75em;
+  }
 }
-.submenu-dropdown li{
-  clear: both;
-  display: block;
-  padding: 0.75em;
+
+.help-system {
+  cursor: help;
+  display: inline-block;
+  min-width: 2em;
+  text-align: center;
 }
-.hospital_logo{
-  width: 95%;
+
+.hospital-logo {
   padding: 1%;
+  width: 95%;
 }
-.p-1 {
-  padding: 1px !important;
+
+.inline {
+  display: inline;
 }
+
+.min-h-930 {
+  min-height: 930px !important;
+}
+
+.min-w-100 {
+  min-width: 10rem;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+
 .p-8 {
   padding: 8px !important;
 }
-.v-middle{
+
+.status-toggler {
+  padding: 3px 6px;
+}
+
+.v-middle {
   vertical-align: middle !important;
+}
+
+.google-map {
+  background-size: cover;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 40%;
+}
+
+.bar-custom-label {
+  color: $black;
+  font-size: 1.25em;
+  padding: 2px;
+  text-align: left;
+}
+
+.pie-custom-label {
+  color: $white;
+  font-size: 1em;
+  padding: 2px;
+  text-align: center;
+
+  .bar-custom-label {
+    color: $white;
+    font-size: 1em;
+  }
+}
+
+.pie-legend {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.easy-pie.counter-pie .percent {
+  font-size: 1.5em;
+  margin-left: 3px;
+  margin-top: 28px;
+  text-align: center;
+}
+
+.easy-pie.counter-pie .percent::after {
+  font-size: .75em;
+  margin-left: -5px;
+}
+
+.mini-charts-half-width {
+  display: inline-block;
+  width: 45%;
+}
+
+.mini-chart-canvas {
+  display: inline-block;
+  height: 45px;
+  vertical-align: top;
+  width: 85px;
+}
+
+.notification-table {
+  padding: 8px 17px;
+  white-space: nowrap;
+}
+
+.notification-link:hover {
+  background-color: $black-shadow;
+  cursor: pointer;
 }

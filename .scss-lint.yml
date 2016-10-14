@@ -1,9 +1,7 @@
 scss_files: 'app/assets/stylesheets/'
 
 exclude:
-  - 'app/assets/stylesheets/app/theme.scss'
-  - 'app/assets/stylesheets/public/*.min.scss'
-  - 'app/assets/stylesheets/public/datetimepicker.scss'
+  - 'app/assets/stylesheets/material_ui/theme.scss'
 
 linters:
   ImportantRule:

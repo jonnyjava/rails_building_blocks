@@ -1,0 +1,95 @@
+$black: #000;
+$black-shadow: rgba(0, 0, 0, .075);
+$corporate-hue: #c11933;
+$light-corporate-hue: #ff5d5d;
+$white: #fff;
+
+[data-current-skin="red"] {
+  background-color: $corporate-hue;
+
+  .ss-icon {
+    color: $corporate-hue;
+  }
+}
+
+.checkbox .input-helper::after {
+  border-bottom: 2px solid $corporate-hue;
+  border-left: 2px solid $corporate-hue;
+}
+
+.fg-line:not([class*=has-])::after {
+  background: $corporate-hue;
+}
+
+.radio .input-helper::after {
+  background-color: $corporate-hue;
+}
+
+.datepicker table td.active::before {
+  background-color: $corporate-hue;
+}
+
+.datepicker table thead tr:first-child th {
+  background: $corporate-hue;
+}
+
+.datepicker table thead tr:last-child:not(:only-child) {
+  background: $light-corporate-hue;
+}
+
+.datepicker table thead tr:first-child th:hover {
+  background: $corporate-hue !important;
+}
+
+.bootstrap-select > .btn-default:not(.disabled)::after,
+.bootstrap-select > .btn-default:not(.readonly)::after {
+  background: $corporate-hue;
+}
+
+@media (max-width: 767px) {
+  [data-current-skin="red"] .ha-menu {
+    background: $corporate-hue;
+  }
+}
+
+body.login-content::before {
+  background: $corporate-hue none repeat scroll 0 0;
+}
+
+button.confirm.btn.btn-lg.btn-warning {
+  background-color: $corporate-hue;
+}
+
+.bgm-corporate,
+.alert-danger {
+  background-color: $corporate-hue !important;
+}
+
+.alert-danger {
+  color: $white;
+}
+
+.c-corporate {
+  color: $corporate-hue !important;
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: $corporate-hue;
+}
+
+.tab-nav:not([data-tab-color]) > li > a::after {
+  background: $corporate-hue !important;
+}
+
+.tab-nav li>a {
+  color: $corporate-hue;
+}
