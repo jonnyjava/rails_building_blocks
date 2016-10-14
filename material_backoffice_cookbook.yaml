@@ -28,6 +28,7 @@ recipes:
 - custom_seeds
 - custom_assets
 - custom_rubocop_config
+- custom_validators
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader
 
