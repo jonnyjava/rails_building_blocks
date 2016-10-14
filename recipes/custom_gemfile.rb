@@ -59,11 +59,6 @@ gems.each do |g|
   add_gem(*g)
 end
 
-##add_gem 'guard', '>= 2.2.2', group: :development, require: false
-##add_gem 'guard-livereload', group: :development, require: false, git: 'https://github.com/guard/guard-livereload'
-##add_gem 'rack-livereload', git: 'https://github.com/johnbintz/rack-livereload', group: :development
-add_gem 'rb-fsevent', group: :development, require: false
-
 ## Git
 git :add => '-A' if prefer :git, true
 git :commit => '-qm "rails_apps_composer: Gemfile"' if prefer :git, true
