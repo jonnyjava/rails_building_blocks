@@ -1,10 +1,10 @@
 module FormFieldsConfigHelper
-  def number_field_config(placeholder, mask)
+  def number_field_config(placeholder, mask, value)
     {
       as: :string,
       label: false,
       class: 'form-control input-mask',
-      input_html: { data: { mask: mask }, class: 'js_demask' },
+      input_html: { data: { mask: mask, 'mask-reverse': 'true' }, class: 'js_demask', value: value },
       placeholder: t(placeholder)
     }
   end
@@ -38,13 +38,23 @@ module FormFieldsConfigHelper
     }
   end
 
-  def radiobuttons_config(collection)
+  def radiobuttons_config(collection, value)
     {
       collection: collection,
       label_method: :first,
       value_method: :last,
       as: :material_radio_buttons,
+      checked: value,
       label: false
+    }
+  end
+
+  def typeahead_field_config(placeholder, value)
+    {
+      as: :string,
+      class: 'string optional form-control typeahead',
+      placeholder: placeholder,
+      value: value
     }
   end
 end

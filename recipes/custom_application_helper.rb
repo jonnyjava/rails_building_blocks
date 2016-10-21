@@ -2,7 +2,8 @@ stage_three do
   say_recipe 'CUSTOM APPLICATION HELPER'
   repo = 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
   copy_from_repo 'app/helpers/form_fields_config_helper.rb', repo: repo
-  copy_from_repo 'app/helpers/material_component_helper.rb', repo: repo
+  copy_from_repo 'app/helpers/material_components_helper.rb', repo: repo
+  copy_from_repo 'app/helpers/material_form_components_helper.rb', repo: repo
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: add application helper"'

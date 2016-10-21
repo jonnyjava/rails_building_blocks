@@ -1,4 +1,4 @@
-#stage_two do
+stage_two do
   if which("rvm")
      say_wizard "RECIPE CREATING PROJECT-SPECIFIC RVM GEMSET AND .RVMRC"
      # using the rvm Ruby API, see:
@@ -55,11 +55,11 @@
    else
      say_wizard "WARNING! RVM does not appear to be available."
    end
-#end
+end
 stage_four do
   ### GIT ###
   git :add => '. -A'
-  git :commit => '-qm "rails_apps_composer: bundle gemfile"'
+  git :commit => '-qm "rails_apps_composer: esta mierda esta fuera de sitio bundle gemfile"'
 end
 __END__
 

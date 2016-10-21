@@ -23,6 +23,7 @@ module #{app_name.capitalize}
       generate.helper false
       generate.jbuilder false
       generate.view_specs false
+      generate.helper :policy
     end
     config.autoload_paths << \"\#{Rails.root}/app/inputs\"
     config.i18n.default_locale = :es

@@ -1,7 +1,7 @@
 class MaterialRadioButtonsInput < SimpleForm::Inputs::CollectionRadioButtonsInput
   def input(_wrapper_options)
     label_method, value_method = detect_collection_methods
-    iopts = {}
+    iopts = { checked: input_options[:checked] || collection.first }
     @builder.send(
       'collection_radio_buttons',
       attribute_name,

@@ -91,16 +91,6 @@ stage_two do
     git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true
 end
 
-# ### GENERATORS ###
-# stage_two do
-#   say_wizard "recipe stage two"
-#   say_wizard "running simpleform generator"
-#   generate 'simple_form:install'
-#   ## Git
-#   git :add => '-A' if prefer :git, true
-#   git :commit => '-qm "rails_apps_composer: generators"' if prefer :git, true
-# end
-
 __END__
 
 name: custom_gemfile
