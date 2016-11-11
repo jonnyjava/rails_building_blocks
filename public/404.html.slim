@@ -1,0 +1,19 @@
+.row.m-t-30
+  .col-xs-4
+  .col-xs-4
+    .card.pt-inner
+      .pti-header.bgm-corporate
+        h2 404
+        .ptih-title Pagina no encontrada
+      .pti-body
+        .ptib-item
+          = image_tag('errors/404.png', size: "96")
+        .ptib-item
+          b Aqui no hay nada...
+        .ptib-item
+          | Vuelve a la pagina principal
+      .pti-footer
+        - destination = current_user ? dashboard_index_path : root_path
+        =link_to destination, class: 'bgm-corporate'
+          i.zmdi.zmdi-home
+  .col-xs-4

@@ -1,19 +1,33 @@
 es:
+  attachments: 'Adjuntos'
+  back: 'Volver'
   back_to_index: 'Volver al listado'
+  birth_date: 'Fecha de nacimiento'
+  birth_place: 'Lugar de nacimiento'
   cancel: 'Cancelar'
+  change: 'Cambiar'
   city: 'Ciudad'
-  clean_search: 'Limpiar form'
+  clean_search: 'Limpiar formulario'
   close: 'Cerrar'
   confirm: 'Confirmar'
   country: 'País'
+  delete: 'Borrar'
   delete_selected: 'Borrar seleccionados'
   edit: 'Modificar'
+  female: 'Mujer'
   from: 'Desde'
+  full_name: 'nombre completo'
+  gender: 'Género'
+  go_to_index_of: 'Ir al listado de'
   home: 'Inicio'
   kind: 'Tipo'
+  last_update: 'Actualizado en'
   location: 'Localización'
   logout: 'Cerrar sesión'
+  male: 'Hombre'
+  nationality: 'Nacionalidad'
   province: 'Provincia'
+  remove: 'Borrar'
   save: 'Guardar'
   save_and_continue: 'guardar y continuar'
   search: 'Buscar'
@@ -23,12 +37,12 @@ es:
   step_back: 'Volver atrás'
   to: 'Hasta'
   update: 'Actualizar'
-  upload_file: 'subir archivos'
+  upload_file: 'Subir archivos'
 
   views:
     pagination:
       first: "Primera"
-      last: "Ultima"
+      last: "Última"
       previous: "Anterior"
       next: "Siguiente"
       truncate: ""

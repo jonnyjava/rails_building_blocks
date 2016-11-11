@@ -1,0 +1,10 @@
+- is_opened = @q.conditions.present?
+.panel-group aria-multiselectable="true" role="tablist"
+  .panel.panel-collapse
+    #search_filters_form role="tab"
+      h4.panel-title
+        a.text-right aria-controls="collapse_filters" aria-expanded="#{is_opened}" data-parent="#accordion" data-toggle="collapse" href="#collapse_filters" class="#{'collapsed' unless is_opened}"
+          = material_button(button_label, 'btn-icon-text', 'search', 'button')
+    #collapse_filters.collapse aria-labelledby="search_filters_form" role="tabpanel" aria-expanded="#{is_opened}" class="#{'in' if is_opened}"
+      .panel-body
+        = content_for :filters
