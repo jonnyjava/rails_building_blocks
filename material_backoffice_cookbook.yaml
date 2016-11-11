@@ -14,23 +14,17 @@ recipes:
 - locale
 - pages
 - custom_application_initializer
-- custom_locales
-- custom_initializers
-- custom_devise_views
-- custom_kaminari_views
-- custom_bootstrap_inputs
-- custom_layouts
-- custom_shared_views
-- custom_rails_generators
-- custom_spec_helpers_and_supports
-- custom_application_helper
 - custom_devise_routes
-- custom_seeds
-- custom_assets
+- custom_initializers
+- custom_locales
+- custom_rails_generators
 - custom_rubocop_config
+- custom_seeds
+- custom_spec_helpers_and_supports
 - custom_validators
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader
+- material_elements
 
 prefs:
   :apps4: 3

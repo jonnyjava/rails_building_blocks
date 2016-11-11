@@ -1,0 +1,12 @@
+.input-group
+  span.input-group-addon
+  .fg-line
+    label.m-r-30= label
+    .fileinput.fileinput-new.m-t-20 data-provides="fileinput"
+      span.btn.btn-primary.btn-file.m-r-10
+        span.fileinput-new =t('upload_file')
+        span.fileinput-exists =t('edit')
+        = f.file_field attachment_name
+      span.fileinput-filename
+      button.btn.btn-default.waves-effect.m-l-15.fileinput-exists data-dismiss="fileinput" type='button'
+        =t('cancel')

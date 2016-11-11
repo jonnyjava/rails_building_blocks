@@ -1,0 +1,5 @@
+- classes = "btn btn-danger btn-icon-text waves-effect bgm-granate js_attachment_remover"
+button[class="#{classes}" type='button' data-hidden="#{attached}" data-filename="#{attached}" data-uploader="#{uploader}"]
+  span.zmdi.zmdi-delete
+  =t('delete_file')
+.hide= f.check_box "remove_#{uploader}".to_sym, label: "remove_#{uploader}", id: "js_check_remove_attachment_#{uploader}"
