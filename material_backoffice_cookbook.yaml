@@ -14,14 +14,8 @@ recipes:
 - locale
 - pages
 - custom_application_initializer
-- custom_devise_routes
-- custom_initializers
-- custom_locales
-- custom_rails_generators
-- custom_rubocop_config
 - custom_seeds
-- custom_spec_helpers_and_supports
-- custom_validators
+- customize_boilerplate
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader
 - material_elements
