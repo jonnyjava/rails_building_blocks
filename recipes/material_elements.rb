@@ -30,6 +30,10 @@ stage_three do
   copy_from_repo 'app/inputs/material_checkbox_input.rb', repo: repo
   copy_from_repo 'app/inputs/material_radio_buttons_input.rb', repo: repo
 
+  # GENERATORS
+  copy_from_repo 'lib/generators/rails/frontend_extras/templates/filters.rb', repo: repo
+  copy_from_repo 'lib/generators/rails/frontend_extras/frontend_extras_generator.rb', repo: repo
+
   # LAYOUTS
   copy_from_repo 'app/views/layouts/_admin_menu.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_container.html.slim', repo: repo

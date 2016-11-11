@@ -14,9 +14,8 @@
 
   .row.m-10
     .col-xs-12.text-right
-      = render 'shared/go_to_edit', destination: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
-      = render 'shared/back_to_index', destination: <%= plural_table_name %>_path
-
+      = material_text_button(edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), "#{t('edit')}", 'bgm-corporate', 'edit')
+      = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= plural_table_name %>')}", '', 'arrow-back')
   .row
     br
 

@@ -1,9 +1,8 @@
 - content_for :main_view do
 
   - content_for :form_buttons
-    = render 'shared/back_to_index', destination: <%= plural_table_name %>_path
-    = render 'shared/go_to_show', destination: @<%= singular_table_name %>
-
+    = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= plural_table_name %>')}", '', 'arrow-back')
+    = material_text_button(<%= singular_table_name %>_path(@<%= singular_table_name %>), "#{t('show')}", '', 'eye')
   = render 'form'
 
 = render 'layouts/main_layout', title: "#{t('editing_<%= singular_table_name %>')}"

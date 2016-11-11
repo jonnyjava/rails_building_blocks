@@ -1,11 +1,15 @@
 - content_for :main_view do
+  - content_for :filters do
+    = render 'filters'
+  = render 'layouts/filter_layout', button_label: t('search')
+
   table.table.table-bordered.table-striped
     thead
       tr
   <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      th <%= attribute.human_name %>
+      th.col-xs-2 <%= attribute.human_name %>
   <% end -%>
-      th
+      th.col-xs-2
 
     tbody
       tr
@@ -14,13 +18,13 @@
       td= <%= singular_table_name %>.<%= attribute.name %>
     <% end -%>
       td
-            = render 'shared/show_button', destination: <%= singular_table_name %>
-            = render 'shared/edit_button', destination: edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-            = render 'shared/delete', destination: <%= singular_table_name %>
+            = material_icon_button(<%= singular_table_name %>_path(<%= singular_table_name %>), '', 'eye')
+            = material_icon_button(edit_<%= singular_table_name %>_path(<%= singular_table_name %>), '', 'edit')
+            = material_delete_button(<%= singular_table_name %>_path(<%= singular_table_name %>))
 
   .row.m-10
     .col-xs-12.text-right
-      = render 'shared/go_to_new', destination: new_<%= singular_table_name %>_path, object: '<%= singular_table_name %>'
+      = material_text_button(new_<%= singular_table_name %>_path, "#{t('new')}", 'bgm-corporate', 'plus')
 
   .row.m-0
     .col-xs-12
