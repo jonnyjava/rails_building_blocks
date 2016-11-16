@@ -78,6 +78,7 @@ stage_three do
   # ERRORS
   remove_file 'public/401.html'
   remove_file 'public/404.html'
+  remove_file 'public/422.html'
   remove_file 'public/500.html'
   copy_from_repo 'public/401.html.slim', repo: repo
   copy_from_repo 'public/404.html.slim', repo: repo

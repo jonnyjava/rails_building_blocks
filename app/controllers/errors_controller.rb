@@ -14,6 +14,12 @@ class ErrorsController < ApplicationController
     end
   end
 
+  def error_422
+    respond_to do |format|
+      format.html { render file: "#{Rails.root}/public/500.html", status: 422 }
+    end
+  end
+
   def error_500
     respond_to do |format|
       format.html { render file: "#{Rails.root}/public/500.html", status: 500 }

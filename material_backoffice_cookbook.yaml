@@ -14,7 +14,7 @@ recipes:
 - locale
 - pages
 - custom_application_initializer
-- custom_seeds
+- custom_db_management
 - customize_boilerplate
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader

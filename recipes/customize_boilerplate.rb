@@ -55,6 +55,9 @@ stage_three do
   remove_file 'spec/support/factory_girl.rb'
   remove_file 'spec/support/helpers.rb'
 
+  # SEEDS
+  copy_from_repo 'db/seeds.rb', repo: repo
+
   # DASHBOARD
   copy_from_repo 'app/controllers/dashboard_controller.rb', repo: repo
   copy_from_repo 'app/views/dashboard/index.html.slim', repo: repo
