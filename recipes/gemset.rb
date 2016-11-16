@@ -68,5 +68,5 @@ description: "Creates and use a specific gemset for the project"
 author: jonnyjava.net
 
 category: homemade
-requires: [setup, gems]
-run_after: [setup, extras, gems]
+requires: [gems]
+run_after: [extras, gems]
