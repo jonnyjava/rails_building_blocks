@@ -28,7 +28,6 @@ module #{app_name.capitalize}
     end
     config.autoload_paths << \"\#{Rails.root}/app/inputs\"
     config.i18n.default_locale = :es
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
 

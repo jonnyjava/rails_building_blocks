@@ -13,8 +13,6 @@ stage_two do
   gsub_file "config/database.yml", /database: myapp_test/,        "database: #{app_name}_test"
   gsub_file "config/database.yml", /database: myapp_production/,  "database: #{app_name}_production"
 
-  run 'rails db:drop'
-  run 'rails db:create:all'
   ## Git
   git :add => '-A' if prefer :git, true
   git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true

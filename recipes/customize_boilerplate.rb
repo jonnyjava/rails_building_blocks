@@ -37,10 +37,14 @@ stage_three do
   # VALIDATORS
   copy_from_repo 'app/validators/date_range_validator.rb', repo: repo
 
+  # GITIGNORE
+  copy_from_repo '.gitignore', repo: repo
+
   # QUALITY GEMS CONFIGS
+  copy_from_repo '.reek', repo: repo
+  copy_from_repo '.rspec', repo: repo
   copy_from_repo '.rubocop.yml', repo: repo
   copy_from_repo '.scss-lint.yml', repo: repo
-  copy_from_repo '.reek', repo: repo
   copy_from_repo '.traceroute', repo: repo
 
   # SPEC HELPERS AND SUPPORT
@@ -72,17 +76,6 @@ stage_three do
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: add initializers"'
-
-
-  say_recipe '-------------- RUNNING SEEDS --------------'
-  run 'rails db:seed'
-  say_recipe "--------------RUNNING USER SCAFFOLDS-------------------"
-  run 'rails g scaffold_controller User'
-  run 'rails g policy User'
-  ### GIT ###
-  git add: '-A'
-  git commit: '-qm "rails_apps_composer: user scaffolds"'
-
 end
 
 __END__

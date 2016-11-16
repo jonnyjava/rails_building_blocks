@@ -48,7 +48,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.43.0', require: false
   gem 'rubocop-rspec'
-  gem 'shoulda-matchers', :require=>false
+  gem 'shoulda-matchers', require: false
 end
 
 group :test do
