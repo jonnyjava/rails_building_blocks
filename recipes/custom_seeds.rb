@@ -6,7 +6,7 @@ end
 
 stage_four do
   say_recipe 'RUNNING SEEDS'
-  run 'bundle exec rake db:seed'
+  run 'rails db:seed'
 end
 __END__
 

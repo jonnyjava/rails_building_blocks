@@ -60,7 +60,7 @@ stage_three do
   copy_from_repo 'app/views/dashboard/index.html.slim', repo: repo
 
   # ERRORS
-  copy_from_repo 'app/controllers/error_controller.rb', repo: repo
+  copy_from_repo 'app/controllers/errors_controller.rb', repo: repo
 
   ### GIT ###
   git :add => '. -A'
