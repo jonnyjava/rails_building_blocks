@@ -1,6 +1,5 @@
 recipes:
-- core
-- setup
+- micro_core
 - readme
 - gemset
 - custom_gemfile
@@ -9,12 +8,9 @@ recipes:
 - frontend
 - extras
 - deployment
-- init
-- devise
-- locale
-- pages
-- custom_application_initializer
 - custom_db_management
+- custom_devise
+- custom_application_initializer
 - customize_boilerplate
 - materialize_material_zip_downloader
 - materialize_fonts_zip_downloader

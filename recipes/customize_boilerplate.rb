@@ -55,6 +55,10 @@ stage_three do
   remove_file 'spec/support/factory_girl.rb'
   remove_file 'spec/support/helpers.rb'
 
+  # FACTORIES
+  remove_file 'spec/factories/users.rb'
+  copy_from_repo 'spec/factories/users.rb', repo: repo
+
   # SEEDS
   copy_from_repo 'db/seeds.rb', repo: repo
 
@@ -68,6 +72,17 @@ stage_three do
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: add initializers"'
+
+
+  say_recipe '-------------- RUNNING SEEDS --------------'
+  run 'rails db:seed'
+  say_recipe "--------------RUNNING USER SCAFFOLDS-------------------"
+  run 'rails g scaffold_controller User'
+  run 'rails g policy User'
+  ### GIT ###
+  git add: '-A'
+  git commit: '-qm "rails_apps_composer: user scaffolds"'
+
 end
 
 __END__

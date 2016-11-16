@@ -20,10 +20,6 @@ stage_two do
   git :commit => '-qm "rails_apps_composer: create database"' if prefer :git, true
 end
 
-stage_four do
-  say_recipe 'RUNNING SEEDS'
-  run 'rails db:seed'
-end
 __END__
 
 name: custom_seeds

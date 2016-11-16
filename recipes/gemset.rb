@@ -56,11 +56,6 @@ stage_two do
      say_wizard "WARNING! RVM does not appear to be available."
    end
 end
-stage_four do
-  ### GIT ###
-  git :add => '. -A'
-  git :commit => '-qm "rails_apps_composer: esta mierda esta fuera de sitio bundle gemfile"'
-end
 __END__
 
 name: gemset_creator
