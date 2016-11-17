@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title = t('app_title')
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = content_for :head_css
+    = csrf_meta_tags
+    link href='http://fonts.googleapis.com/css?family=Oswald:100,300,400,500,600,800%7COpen+Sans:300,400,500,600,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'
+    link href='assets/images/favicon.ico' rel='icon'
+  body
+    = yield

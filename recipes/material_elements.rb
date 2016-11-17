@@ -37,9 +37,10 @@ stage_three do
   # LAYOUTS
   copy_from_repo 'app/views/layouts/_admin_menu.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_container.html.slim', repo: repo
-  copy_from_repo 'app/views/layouts/_menu_panel.html.slim', repo: repo
+  copy_from_repo 'app/views/layouts/error_layout.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_filter_layout.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/_main_layout.html.slim', repo: repo
+  copy_from_repo 'app/views/layouts/_menu_panel.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/application.html.slim', repo: repo
   copy_from_repo 'app/views/layouts/devise.html.slim', repo: repo
   remove_file'app/views/layouts/_nav_links_for_auth.html.erb'
@@ -82,6 +83,7 @@ stage_three do
   remove_file 'public/500.html'
   copy_from_repo 'public/401.html.slim', repo: repo
   copy_from_repo 'public/404.html.slim', repo: repo
+  copy_from_repo 'public/422.html.slim', repo: repo
   copy_from_repo 'public/500.html.slim', repo: repo
 
   ### GIT ###
