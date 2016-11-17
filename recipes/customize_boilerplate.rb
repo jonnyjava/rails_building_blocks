@@ -51,6 +51,7 @@ stage_three do
   copy_from_repo 'spec/rails_helper.rb', repo: repo
   copy_from_repo 'spec/support/controller_macros.rb', repo: repo
   copy_from_repo 'spec/support/database_cleaner.rb', repo: repo
+  copy_from_repo 'spec/support/pundit_matcher.rb', repo: repo
   copy_from_repo 'spec/support/request_macros.rb', repo: repo
   remove_file 'spec/support/helpers'
   remove_file 'spec/features'
