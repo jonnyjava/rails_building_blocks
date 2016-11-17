@@ -44,5 +44,4 @@ describe <%= controller_class_name %>Controller do
       expect(response).to redirect_to(<%= index_helper %>_url)
     end
   end
-end
-<% end %>
+end<% end %>

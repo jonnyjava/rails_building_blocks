@@ -1,12 +1,12 @@
 stage_three do
   say_recipe 'OVERRIDE APPLICATION_CONTROLLER.RB'
 
-remove_file "config/application_controller.rb"
-create_file 'config/application_controller.rb' do <<-EOF
-  class ApplicationController < ActionController::Base
-    include Pundit
-    protect_from_forgery with: :exception
-  end
+remove_file "app/controllers/application_controller.rb"
+create_file 'app/controllers/application_controller.rb' do <<-EOF
+class ApplicationController < ActionController::Base
+  include Pundit
+  protect_from_forgery with: :exception
+end
 EOF
 end
 
