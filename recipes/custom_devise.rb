@@ -22,6 +22,18 @@ stage_four do
   run 'rails db:migrate'
   run 'rails g scaffold_controller User email first_surname name password password_confirmation phone role second_surname use_of_cookies'
   run 'rails generate policy User'
+  say_recipe "--------------OVERRIDING USER MODEL-------------------"
+  create_file 'app/models/user.rb' do <<-EOF
+  class User < ApplicationRecord
+    devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+
+    validates :name, :first_surname, presence: true
+    validates_acceptance_of :use_of_cookies, accept: true
+
+    enum role: { admin: 0 }
+  end
+  EOF
+  end
   ### GIT ###
   git add: '-A'
   git commit: '-qm "rails_apps_composer: user scaffolds"'

@@ -4,6 +4,7 @@ stage_three do
 
   # INITIALIZERS
   copy_from_repo 'config/environments/development.rb', repo: repo
+  copy_from_repo 'config/environments/test.rb', repo: repo
   copy_from_repo 'config/initializers/devise.rb', repo: repo
   copy_from_repo 'config/initializers/draper.rb', repo: repo
   copy_from_repo 'config/initializers/rack_profiler.rb', repo: repo
@@ -66,6 +67,10 @@ stage_three do
 
   # SEEDS
   copy_from_repo 'db/seeds.rb', repo: repo
+
+  # USER STUFF
+  copy_from_repo 'spec/models/user_spec.rb', repo: repo
+  copy_from_repo 'spec/decorators/user_decorator.rb', repo: repo
 
   # DASHBOARD
   copy_from_repo 'app/controllers/dashboard_controller.rb', repo: repo
