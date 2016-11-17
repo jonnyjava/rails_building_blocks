@@ -90,6 +90,11 @@ stage_three do
   copy_from_repo 'app/assets/images/errors/422.png', repo: repo
   copy_from_repo 'app/assets/images/errors/500.png', repo: repo
 
+  # DEFAULT IMAGES
+  copy_from_repo 'app/assets/images/logo.png', repo: repo
+  copy_from_repo 'app/assets/images/theme/profile-menu.png', repo: repo
+  copy_from_repo 'app/assets/images/theme/profile-pics/demo.jpg', repo: repo
+
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: material components"'
