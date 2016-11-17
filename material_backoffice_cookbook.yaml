@@ -24,7 +24,7 @@ prefs:
   :dev_webserver: puma
   :prod_webserver: same
   :database: mysql
-  :templates: slim
+  :templates: erb
   :tests: rspec
   :integration: none
   :fixtures: factory_girl
