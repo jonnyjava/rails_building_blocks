@@ -23,6 +23,7 @@ stage_four do
   run 'rails g scaffold_controller User email first_surname name password password_confirmation phone role second_surname use_of_cookies'
   run 'rails generate policy User'
   say_recipe "--------------OVERRIDING USER MODEL-------------------"
+  remove_file 'app/models/user.rb'
   create_file 'app/models/user.rb' do <<-EOF
   class User < ApplicationRecord
     devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable

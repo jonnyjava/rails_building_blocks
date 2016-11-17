@@ -6,10 +6,11 @@ module MaterialCarrierwaveComponentsHelper
   end
 
   def downloadable_params(attachment)
+    model = attachment.model
     {
-      class_name: attachment.model.class.name,
+      class_name: model.class.name,
       attachment_name: attachment.mounted_as.to_s,
-      attached_id: attachment.model.id
+      attached_id: model.id
     }
   end
 end

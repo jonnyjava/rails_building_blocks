@@ -7,7 +7,7 @@
     thead
       tr
   <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      th.col-xs-2 <%= attribute.human_name %>
+      th.col-xs-2 =t('<%= attribute.name %>')
   <% end -%>
       th.col-xs-2
 

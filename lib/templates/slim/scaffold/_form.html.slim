@@ -2,8 +2,8 @@
   = f.error_notification
   .row.m-10<%- attributes.each do |attribute| -%><% atype = attribute.type.to_s%><% if atype != 'boolean'%>
     .col-xs-4<% if atype == 'date' || atype == 'datetime' %>
-      - f_field = f.input_field :<%= attribute.name %>, datepicker_config(@<%= singular_table_name %>.expiration)<% elsif atype == 'decimal' || atype == 'integer' || atype == 'float'%>
-      - f_field = f.input :<%= attribute.name %>, number_field_config('<%= attribute.name %>', '00.000')<% elsif atype == 'text'%>
+      - f_field = f.input_field :<%= attribute.name %>, datepicker_config(@<%= singular_table_name %>.<%= attribute.name %>)<% elsif atype == 'decimal' || atype == 'integer' || atype == 'float'%>
+      - f_field = f.input :<%= attribute.name %>, number_field_config('<%= attribute.name %>', '00.000', @<%= singular_table_name %>.<%= attribute.name %>)<% elsif atype == 'text'%>
       - f_field = f.input :<%= attribute.name %>, textarea_config<% else %>
       - f_field = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>, label: false<% end %>
       = material_form_component(t('<%= attribute.name %>'), 'circle', f_field)<% else %>

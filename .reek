@@ -1,6 +1,9 @@
 exclude_paths:
   - db
   - lib
+  - helpers
+  - inputs
+  - validators
 IrresponsibleModule:
   enabled: false
 UncommunicativeVariableName:

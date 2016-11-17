@@ -3,7 +3,7 @@
 //= require bower_components/animate.css/animate.min.css
 //= require bower_components/bootstrap-sweetalert/lib/sweet-alert.css
 //= require bower_components/bootstrap-select/dist/css/bootstrap-select.css
-//= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font
+//= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css
 //= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css
 //= require bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
 // THEME
@@ -48,6 +48,10 @@
   height: auto;
   min-height: 250px;
   width: 250px;
+}
+
+.f-40 {
+  font-size: 40px !important;
 }
 
 //ADDED CLASSES
@@ -141,7 +145,7 @@
 
 .easy-pie.counter-pie .percent::after {
   font-size: .75em;
-  margin-left: -5px;
+  margin-left: 0;
 }
 
 .mini-charts-half-width {
