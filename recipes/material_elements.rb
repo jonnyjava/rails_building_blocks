@@ -85,6 +85,10 @@ stage_three do
   copy_from_repo 'public/404.html.slim', repo: repo
   copy_from_repo 'public/422.html.slim', repo: repo
   copy_from_repo 'public/500.html.slim', repo: repo
+  copy_from_repo 'app/assets/images/errors/401.png', repo: repo
+  copy_from_repo 'app/assets/images/errors/404.png', repo: repo
+  copy_from_repo 'app/assets/images/errors/422.png', repo: repo
+  copy_from_repo 'app/assets/images/errors/500.png', repo: repo
 
   ### GIT ###
   git :add => '. -A'
