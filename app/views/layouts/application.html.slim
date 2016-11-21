@@ -7,9 +7,9 @@ html
     = content_for :head_css
     = csrf_meta_tags
   body.toggled.sw-toggled
-  header#header.clearfix[data-current-skin="red"]
-    ul.header-inner
-      li#menu-trigger[data-trigger="#sidebar"]
+  header#header.clearfix[data-ma-theme="red"]
+    ul.h-inner
+      li.hi-trigger.ma-trigger data-ma-action='sidebar-open' data-ma-target='#sidebar'
         .line-wrap
           .line.top
           .line.center
@@ -18,18 +18,13 @@ html
         = link_to dashboard_index_path, class: "m-l-10" do
           = image_tag('logo.png')
       li.pull-right
-        ul.top-menu
+        ul.hi-menu
           li.dropdown
             = link_to destroy_user_session_path, method: :delete do
-              i.tm-icon.zmdi.zmdi-power
-
-      li.pull-right#toggle-width
-        .toggle-switch
-          input#tw-switch type='checkbox' hidden='hidden' checked='true'
-          label.ts-helper for='tw-switch'
+              i.him-icon.zmdi.zmdi-power
   section#main[data-layout="layout-1"]
     = render 'layouts/menu_panel'
     = yield
-  footer#footer ="Copyright © #{Date.current.year} Pixelstudios.es"
+  footer#footer ="Copyright © #{Date.current.year} Pixelstudios.es Todos los derechos reservados"
   = javascript_include_tag 'application'
   = content_for :js_init

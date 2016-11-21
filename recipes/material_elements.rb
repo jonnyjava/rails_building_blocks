@@ -12,6 +12,8 @@ stage_three do
   copy_from_repo 'config/locales/materialize_ui_es.yml', repo: repo
 
   # DEVISE
+  copy_from_repo 'app/views/devise/confirmations/new.html.slim', repo: repo
+  copy_from_repo 'app/views/devise/passwords/edit.html.slim', repo: repo
   copy_from_repo 'app/views/devise/passwords/new.html.slim', repo: repo
   copy_from_repo 'app/views/devise/registrations/new.html.slim', repo: repo
   copy_from_repo 'app/views/devise/sessions/new.html.slim', repo: repo
@@ -71,6 +73,7 @@ stage_three do
   copy_from_repo 'app/assets/javascripts/theme/flot-charts/line-chart.js', repo: repo
   copy_from_repo 'app/assets/javascripts/theme/flot-charts/pie-chart.js', repo: repo
   copy_from_repo 'app/assets/javascripts/theme/functions.js', repo: repo
+  copy_from_repo 'app/assets/javascripts/theme/theme.js', repo: repo
   copy_from_repo 'app/assets/stylesheets/application.scss', repo: repo
   copy_from_repo 'app/assets/stylesheets/corporate-skin.scss', repo: repo
   copy_from_repo 'app/assets/stylesheets/material_ui/theme.scss', repo: repo

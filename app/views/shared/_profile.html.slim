@@ -1,16 +1,14 @@
-.profile-menu
-  a[href=""]
-    .profile-pic
+.s-profile
+  a[data-ma-action="profile-menu-toggle" href=""]
+    .sp-pic
       = image_tag('theme/profile-pics/demo.jpg', class: 'img-responsive', alt: current_user.name, width: '50px')
-    .profile-info
-      = current_user.name
+    .sp-info
+      b Malinda Hollaway
       i.zmdi.zmdi-caret-down
-    ul.main-menu
-      li
-        a[href=""]
-          i.zmdi.zmdi-settings
-          = t('settings')
-      li
-        = link_to destroy_user_session_path, method: :delete do
-          i.zmdi.zmdi-time-restore
-          = t('logout')
+  ul.main-menu
+    li
+      = link_to destroy_user_session_path, method: :delete do
+        i.zmdi.zmdi-power
+        = t('logout')
+    li
+      hr

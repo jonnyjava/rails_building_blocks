@@ -1,10 +1,37 @@
 $black: #000;
 $black-shadow: rgba(0, 0, 0, .075);
 $corporate-hue: #c11933;
-$light-corporate-hue: #ff5d5d;
+$light-corporate-hue: #48a590;
 $white: #fff;
 
-[data-current-skin="red"] {
+.checkbox input:checked + .input-helper::before {
+  background-color: $corporate-hue;
+  border-color: $corporate-hue;
+}
+
+.checkbox .input-helper::before,
+.radio .input-helper::before {
+  border: 1px solid $corporate-hue;
+}
+
+.radio .input-helper::after {
+  background-color: $corporate-hue;
+}
+
+.bgm-corporate,
+.lcb-navigation a {
+  background-color: $corporate-hue !important;
+}
+
+.login-content {
+  background-color: $light-corporate-hue;
+}
+
+.c-corporate {
+  color: $corporate-hue !important;
+}
+
+[data-ma-theme="red"] {
   background-color: $corporate-hue;
 
   .ss-icon {
@@ -12,17 +39,12 @@ $white: #fff;
   }
 }
 
-.checkbox .input-helper::after {
-  border-bottom: 2px solid $corporate-hue;
-  border-left: 2px solid $corporate-hue;
+.easy-pie .percent {
+  color: $corporate-hue;
 }
 
 .fg-line:not([class*=has-])::after {
   background: $corporate-hue;
-}
-
-.radio .input-helper::after {
-  background-color: $corporate-hue;
 }
 
 .datepicker table td.active::before {
@@ -60,17 +82,8 @@ button.confirm.btn.btn-lg.btn-warning {
   background-color: $corporate-hue;
 }
 
-.bgm-corporate,
-.alert-danger {
-  background-color: $corporate-hue !important;
-}
-
 .alert-danger {
   color: $white;
-}
-
-.c-corporate {
-  color: $corporate-hue !important;
 }
 
 .has-error .help-block,

@@ -1,7 +1,9 @@
 // THEME VENDOR
 //= require bower_components/fullcalendar/dist/fullcalendar.min.css
 //= require bower_components/animate.css/animate.min.css
-//= require bower_components/bootstrap-sweetalert/lib/sweet-alert.css
+
+//= require bower_components/sweetalert2/dist/sweetalert2.min.css
+
 //= require bower_components/bootstrap-select/dist/css/bootstrap-select.css
 //= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css
 //= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css
@@ -13,104 +15,114 @@
 @import 'corporate-skin';
 
 //SMALL FIXES
-.col-xs-12 .dl-horizontal dt {
-  overflow: visible;
-  width: 25%;
-}
+.lcb-navigation a[data-ma-action="login-switch"]:hover {
+  text-align: center;
+  width: 400px;
 
-.col-xs-6 .dl-horizontal dt {
-  overflow: visible;
-  width: 50%;
-}
-
-.lc-block {
-  width: 600px;
-}
-
-#profile-main {
-  min-height: 650px;
-  padding-bottom: 20px;
-
-  .pm-overview {
-    background-color: transparent;
+  i {
+    display: none;
   }
 }
 
-.input-group-addon {
-  padding-top: 1.5em;
-}
-
-.radio-label {
+//.col-xs-12 .dl-horizontal dt {
+//  overflow: visible;
+//  width: 25%;
+//}
+//
+//.col-xs-6 .dl-horizontal dt {
+//  overflow: visible;
+//  width: 50%;
+//}
+//
+//.lc-block {
+//  width: 600px;
+//}
+//
+//#profile-main {
+//  min-height: 650px;
+//  padding-bottom: 20px;
+//
+//  .pm-overview {
+//    background-color: transparent;
+//  }
+//}
+//
+//.input-group-addon {
+//  padding-top: 1.5em;
+//}
+//
+.radio_label {
   min-width: 4.25em;
 }
 
-.fileinput .fileinput-preview {
-  height: auto;
-  min-height: 250px;
-  width: 250px;
+.radio label {
+  padding-left: 0;
+  padding-right: 30px;
 }
+//
+//.fileinput .fileinput-preview {
+//  height: auto;
+//  min-height: 250px;
+//  width: 250px;
+//}
+
 
 .f-40 {
   font-size: 40px !important;
 }
 
 //ADDED CLASSES
-.submenu-dropdown {
-  width: 100%;
-
-  li {
-    clear: both;
-    display: block;
-    padding: .75em;
-  }
-}
-
-.help-system {
-  cursor: help;
-  display: inline-block;
-  min-width: 2em;
-  text-align: center;
-}
-
-.hospital-logo {
-  padding: 1%;
-  width: 95%;
-}
-
-.inline {
-  display: inline;
-}
-
-.min-h-930 {
-  min-height: 930px !important;
-}
-
-.min-w-100 {
-  min-width: 10rem;
-}
-
-.no-shadow {
-  box-shadow: none;
-}
-
-.p-8 {
-  padding: 8px !important;
-}
-
-.status-toggler {
-  padding: 3px 6px;
-}
-
-.v-middle {
-  vertical-align: middle !important;
-}
-
-.google-map {
-  background-size: cover;
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 40%;
-}
+//.submenu-dropdown {
+//  width: 100%;
+//
+//  li {
+//    clear: both;
+//    display: block;
+//    padding: .75em;
+//  }
+//}
+//
+//.help-system {
+//  cursor: help;
+//  display: inline-block;
+//  min-width: 2em;
+//  text-align: center;
+//}
+//
+//.inline {
+//  display: inline;
+//}
+//
+//.min-h-930 {
+//  min-height: 930px !important;
+//}
+//
+//.min-w-100 {
+//  min-width: 10rem;
+//}
+//
+//.no-shadow {
+//  box-shadow: none;
+//}
+//
+//.p-8 {
+//  padding: 8px !important;
+//}
+//
+//.status-toggler {
+//  padding: 3px 6px;
+//}
+//
+//.v-middle {
+//  vertical-align: middle !important;
+//}
+//
+//.google-map {
+//  background-size: cover;
+//  height: 0;
+//  overflow: hidden;
+//  padding-bottom: 40%;
+//}
 
 .bar-custom-label {
   color: $black;
@@ -136,10 +148,15 @@
   margin-left: 1em;
 }
 
+.easy-pie .percent {
+  left: 0;
+  top: 2px;
+}
+
 .easy-pie.counter-pie .percent {
   font-size: 1.5em;
-  margin-left: 3px;
-  margin-top: 28px;
+  margin-left: 2px;
+  margin-top: 24px;
   text-align: center;
 }
 

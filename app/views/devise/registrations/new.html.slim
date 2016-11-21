@@ -1,41 +1,19 @@
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = f.error_notification
-  #l-login.lc-block.toggled
-    h1.c-red =t('register')
-    .input-group.m-b-20
-      span.input-group-addon
-        i.zmdi.zmdi-account
-      .fg-line
-      = f.input :email,
-        required: false,
-        autofocus: true,
-        placeholder: t('email'),
-        class: 'form-control',
-        label: false
-    .input-group.m-b-20
-      span.input-group-addon
-        i.zmdi.zmdi-key
-      .fg-line
-        = f.input :password,
-          required: true,
-          type: 'password',
-          placeholder: t('password'),
-          class: 'form-control',
-          label: false,
-          hint: ( t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length)
-    .input-group.m-b-20
-      span.input-group-addon
-        i.zmdi.zmdi-key
-      .fg-line
-        = f.input :password_confirmation,
-          required: true,
-          type: 'password',
-          placeholder: t('repeat_password'),
-          class: 'form-control',
-          label: false,
-          hint: (t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length)
-    .clearfix
-    button.btn.btn-login.btn-primary.btn-float
-      i.zmdi.zmdi-arrow-forward
-    .form-actions
+  .login-content
+    #l-login.lc-block.toggled
+      .lcb-form
+        h1.c-corporate.m-b-30 =t('devise.registrations.new.sign_up')
+        - f_field = f.input :email, required: false, autofocus: true, placeholder: t('user.email'), label: false, input_html: { class: 'p-b-10' }
+        .m-t-10.m-b-10 = material_form_component('', 'account', f_field)
+        - f_field = f.input :name, required: false, autofocus: true, placeholder: t('user.name'), label: false, input_html: { class: 'p-b-10' }
+        .m-t-10.m-b-10 = material_form_component('', 'account', f_field)
+        - f_field = f.input :first_surname, required: false, autofocus: true, placeholder: t('user.first_surname'), label: false, input_html: { class: 'p-b-10' }
+        .m-t-10.m-b-10 = material_form_component('', 'account', f_field)
+        - f_field = f.input :password, required: true, type: 'password', placeholder: t('password'), label: false, hint: ( t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length), input_html: { class: 'p-b-10' }
+        .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
+        - f_field = f.input :password_confirmation, required: true, type: 'password', placeholder: t('repeat_password'), class: 'form-control', label: false, hint: (t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length), input_html: { class: 'p-b-10' }
+        .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
+        button.btn.btn-login.btn-success.btn-float.bgm-corporate
+          i.zmdi.zmdi-arrow-forward
       = render "devise/shared/links"

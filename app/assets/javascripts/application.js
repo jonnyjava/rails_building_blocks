@@ -16,11 +16,15 @@
 //= require bower_components/simpleWeather/jquery.simpleWeather.min.js
 //= require bower_components/Waves/dist/waves.min.js
 //= require bootstrap-growl/bootstrap-growl.min.js
-//= require bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js
+
+//= require bower_components/sweetalert2/dist/sweetalert2.min.js
+
 //= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js
 //= require bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
 //= require bower_components/bootstrap-select/dist/js/bootstrap-select.js
 //= require bower_components/autosize/dist/autosize.min.js
+//= require bower_components/jquery-mask-plugin/dist/jquery.mask.min.js
+//= require bower_components/typeahead.js/dist/typeahead.bundle.min.js
 
 //= require theme/flot-charts/bar-chart
 //= require theme/flot-charts/pie-chart
@@ -30,19 +34,18 @@
 
 // APP VENDOR
 //= require jQuery-Storage-API/jquery.storageapi.min
-//= require input-mask/input-mask.js
+
 //= require summernote/dist/summernote-updated.min.js
 //= require fileinput/fileinput.js
-//= require typeahead.js/dist/typeahead.bundle.min.js
 //= require sparklines/jquery.sparkline.min.js
 //
 //= require theme/functions
+//= require theme/theme
 // APP
 //= require shared
 //= require custom_alerts
 //= require custom_charts
 //= require datepicker-es.js
 //= require custom_inputmask
-//= require custom_menu_toggler
 //= require filter_cleaner
 //= require status_toggler

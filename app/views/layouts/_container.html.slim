@@ -1,8 +1,7 @@
 section#content
   .container
     .card
-      .listview.lv-bordered.lv-lg
-        .lv-header-alt.clearfix
-          h2.lvh-label.text-uppercase = title
-        .lv-body
-          = content_for :main_view
+      .card-header
+        h2.text-uppercase = title
+      .card-body.card-padding
+        = content_for :main_view

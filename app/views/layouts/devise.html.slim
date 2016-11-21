@@ -8,7 +8,7 @@ html
     = content_for :head_css
 
     = csrf_meta_tags
-  body.login-content
+  body
     = yield
   footer#footer ="Copyright © #{Date.current.year} Pixelstudios.es"
   = javascript_include_tag 'application'

@@ -12,22 +12,28 @@ $.rails.confirmed = function(link) {
 };
 
 $.rails.showConfirmDialog = function(link) {
+  var corporateHue = '#c11933';
   swal({
-      title: "Estás seguro?",
-      text: "Una vez borrada, esta información no podrá ser recuperada",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#F44336",
-      confirmButtonText: "Si, estoy seguro",
-      cancelButtonText: "No, cancelar",
-      closeOnConfirm: false,
-      closeOnCancel: false
-  }, function(isConfirm){
-      if (isConfirm) {
-          swal("Borrado", "Operación realizada con exito.", "success");
-          return $.rails.confirmed(link);
-      } else {
-          swal("Operación anulada", "Nada ha sido borrado", "error");
-      }
-  });
+    title: "Estás seguro?",
+    text: "Una vez borrada, esta información no podrá ser recuperada",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: corporateHue,
+    confirmButtonText: "Si, estoy seguro",
+    cancelButtonText: "No, cancelar",
+    cancelButtonColor: '#d33'
+  }).then(function(){
+    swal("Borrado", "Operación realizada con exito.", "success");
+    return $.rails.confirmed(link);
+  }, function (dismiss) {
+    if (dismiss === 'cancel') {
+      swal({
+        title: "Operación anulada",
+        text: "Nada ha sido borrado",
+        type: "error",
+        confirmButtonColor: corporateHue,
+        confirmButtonText: "Perfecto, gracias!"
+      });
+    }
+  })
 };

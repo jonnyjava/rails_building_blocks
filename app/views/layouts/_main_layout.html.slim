@@ -1,8 +1,7 @@
 section#content
   .container
     .card
-      .listview.lv-bordered.lv-lg
-        .lv-header-alt.clearfix
-          h4 =title
-        .lv-body
-          = content_for :main_view
+      .card-header
+        h4 =title
+      .card-body.card-padding
+        = content_for :main_view
