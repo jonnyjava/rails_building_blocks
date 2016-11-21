@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   var bar_values = [];
   var bar_labels = [];
-  if ($('.js_category_weight')[0]) {
+  if ($('.js_top_jobs')[0]) {
     bar_values = $('.js_top_jobs').data('values').toString().split(',');
     bar_labels = $('.js_top_jobs').data('labels').toString().split(',');
   }

@@ -1,0 +1,53 @@
+- pie_values = "8,13,18,12,33"
+- pie_labels = "label 1, label 2, label 3, label 4, label 5"
+- bar_values = "4,2,3,5,1"
+- bar_labels = "label 1, label 2, label 3, label 4, label 5"
+section#content
+  .container
+    .block-header
+    .row
+      .col-sm-6
+        .card
+          .card-header.ch-alt
+            h2 TITLE
+            small subtitle
+          .card-body.p-b-30
+            #pie-chart.flot-chart-pie
+            .flc-pie.hidden-xs.pie-legend
+            .js_category_weight[data-values="#{pie_values}", data-labels="#{pie_labels}"]
+      .col-sm-6
+        .card.p-b-30.p-t-0
+          .card-header.ch-alt
+            h2 TITLE
+            small subtitle
+          .card-body.text-center
+            b
+            = material_mini_counter_graph(50, 50, 'fancy label')
+            = material_mini_counter_graph(100, 100, 'fancy label')
+        .card
+          .card-body
+            .m-t-25= material_mini_icon_panel(number_to_currency(1234), t('usd_sent'), 'money', 'bgm-corporate')
+            = material_mini_counter_panel(99, 'fancy label', 'bgm-corporate')
+            .mini-charts-item.bgm-corporate.m-b-10
+              .clearfix
+                #js_job_offers_stats_pie.chart.chart-pie.p-l-10.p-t-20 data-values="20,30"
+                  canvas.mini-chart-canvas
+                .count.p-5
+                  h5.c-white TITLE
+                  .mini-charts-half-width
+                    h5.c-white subtitle1
+                    h4.c-white 20
+                  .mini-charts-half-width
+                    h5.c-white subtitle2
+                    h4.c-white 30
+
+    .row
+      .col-sm-12
+        .card
+          .card-header.ch-alt
+            h2 TITLE
+            small subtitle
+          .card-body.m-t-0.p-b-30
+            #bar-chart.flot-chart
+            .flc-bar.pie-legend
+            .js_top_jobs[data-values="#{bar_values}", data-labels="#{bar_labels}"]
