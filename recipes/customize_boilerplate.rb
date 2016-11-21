@@ -23,17 +23,20 @@ stage_three do
   copy_from_repo 'config/locales/simple_form.es.yml', repo: repo
 
   # GENERATORS
-  copy_from_repo 'lib/templates/rails/scaffold_controller/controller.rb', repo: repo
-  copy_from_repo 'lib/templates/rspec/scaffold/controller_spec.rb', repo: repo
-  copy_from_repo 'lib/templates/rspec/scaffold/routing_spec.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/policy_generator.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/templates/policy.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/templates/policy_spec.rb', repo: repo
+  copy_from_repo 'lib/templates/rails/scaffold_controller/controller.rb', repo: repo
+  copy_from_repo 'lib/templates/rspec/integration/request_spec.rb', repo: repo
+  copy_from_repo 'lib/templates/rspec/scaffold/controller_spec.rb', repo: repo
+  copy_from_repo 'lib/templates/rspec/scaffold/routing_spec.rb', repo: repo
   copy_from_repo 'lib/templates/slim/scaffold/_form.html.slim', repo: repo
   copy_from_repo 'lib/templates/slim/scaffold/edit.html.slim', repo: repo
   copy_from_repo 'lib/templates/slim/scaffold/index.html.slim', repo: repo
   copy_from_repo 'lib/templates/slim/scaffold/new.html.slim', repo: repo
   copy_from_repo 'lib/templates/slim/scaffold/show.html.slim', repo: repo
+  remove_file 'lib/templates/erb/scaffold/_form.html.erb'
+  remove_dir 'lib/templates/erb'
 
   # VALIDATORS
   copy_from_repo 'app/validators/date_range_validator.rb', repo: repo
