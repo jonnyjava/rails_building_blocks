@@ -5,18 +5,18 @@
       .pmbb-header
         h2
           i.zmdi.zmdi-circle.m-r-15
-          = t('<%= singular_table_name %>')
+          = t('<%= singular_table_name %>', count: 1)
       .pmbb-body.p-l-30
         .pmbb-view
     <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      = material_list_element_component(t('<%= attribute.name %>'), @<%= singular_table_name %>.<%= attribute.name %>)
+      = material_list_element_component(t('<%= singular_table_name %>.<%= attribute.name %>'), @<%= singular_table_name %>.<%= attribute.name %>)
     <% end -%>
 
   .row.m-10
     .col-xs-12.text-right
       = material_text_button(edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), "#{t('edit')}", 'bgm-corporate', 'edit')
-      = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= plural_table_name %>')}", '', 'arrow-back')
+      = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= singular_table_name %>', count: 2)}", '', 'arrow-back')
   .row
     br
 
-= render 'layouts/main_layout', title: "#{t('<%= singular_table_name %>')}"
+= render 'layouts/main_layout', title: "#{t('<%= singular_table_name %>', count: 2)}"

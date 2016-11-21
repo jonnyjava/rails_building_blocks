@@ -1,7 +1,7 @@
 - content_for :main_view do
 
   - content_for :form_buttons
-    = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= singular_table_name %>')}", '', 'arrow-back')
+    = material_text_button(<%= plural_table_name %>_path, "#{t('go_to_index_of')} #{t('<%= singular_table_name %>', count: 2)}", '', 'arrow-back')
   = render 'form'
 
-= render 'layouts/main_layout', title: "#{t('new_<%= singular_table_name %>')}"
+= render 'layouts/main_layout', title: "#{t('new')} #{t('<%= singular_table_name %>', count: 1)}"

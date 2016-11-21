@@ -23,6 +23,7 @@ stage_three do
   copy_from_repo 'config/locales/simple_form.es.yml', repo: repo
 
   # GENERATORS
+  copy_from_repo 'lib/generators/rails/frontend_extras/templates/i18n_translations.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/policy_generator.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/templates/policy.rb', repo: repo
   copy_from_repo 'lib/generators/rails/policy/templates/policy_spec.rb', repo: repo

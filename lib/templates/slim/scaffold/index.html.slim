@@ -7,7 +7,7 @@
     thead
       tr
   <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      th.col-xs-2 =t('<%= attribute.name %>')
+      th.col-xs-2 =t('<%= singular_table_name %>.<%= attribute.name %>')
   <% end -%>
       th.col-xs-2
 
@@ -24,7 +24,7 @@
 
   .row.m-10
     .col-xs-12.text-right
-      = material_text_button(new_<%= singular_table_name %>_path, "#{t('new')}", 'bgm-corporate', 'plus')
+      = material_text_button(new_<%= singular_table_name %>_path, "#{t('new')} #{t('<%= singular_table_name %>', count: 1)}", 'bgm-corporate', 'plus')
 
   .row.m-0
     .col-xs-12
@@ -32,4 +32,4 @@
 
   = paginate @<%= plural_table_name %>
 
-= render 'layouts/main_layout', title: t('<%= singular_table_name %>')
+= render 'layouts/main_layout', title: t('<%= singular_table_name %>', count: 2)

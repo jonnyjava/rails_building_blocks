@@ -6,6 +6,7 @@ es:
   birth_place: 'Lugar de nacimiento'
   cancel: 'Cancelar'
   change: 'Cambiar'
+  choose_date: 'Elegir fecha'
   city: 'Ciudad'
   clean_search: 'Limpiar formulario'
   close: 'Cerrar'
