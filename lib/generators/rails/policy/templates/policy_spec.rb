@@ -23,7 +23,7 @@ describe <%= class_name %>Policy do
   end
 
   context 'for an admin' do
-    subject { <%= class_name %>Policy.new(admin, <%= file_name %>) }
+    subject { described_class.new(admin, <%= file_name %>) }
     it_behaves_like 'someone authorized'
   end
 end

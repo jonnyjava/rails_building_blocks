@@ -19,6 +19,7 @@ class ErrorsController < ApplicationController
   end
 
   private
+
   def respond_to_error(error)
     respond_to do |format|
       format.html { render file: "#{Rails.root}/public/#{error}.html", status: error }

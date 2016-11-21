@@ -11,5 +11,4 @@ describe <%= controller_class_name %>Controller do
     it { expect(patch: '/<%= ns_table_name %>/1').to route_to('<%= ns_table_name %>#update', id: '1') }
     it { expect(delete: '/<%= ns_table_name %>/1').to route_to('<%= ns_table_name %>#destroy', id: '1') }
   end
-end
-<% end %>
+end<% end %>

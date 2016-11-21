@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-
   private
 
   def user_not_authorized
@@ -28,10 +27,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: allowed_keys)
   end
 end
-
 EOF
 end
-
 
 end
 

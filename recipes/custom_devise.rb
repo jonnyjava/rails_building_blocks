@@ -25,14 +25,14 @@ stage_four do
   say_recipe "--------------OVERRIDING USER MODEL-------------------"
   remove_file 'app/models/user.rb'
   create_file 'app/models/user.rb' do <<-EOF
-  class User < ApplicationRecord
-    devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+class User < ApplicationRecord
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
-    validates :name, :first_surname, presence: true
-    validates_acceptance_of :use_of_cookies, accept: true
+  validates :name, :first_surname, presence: true
+  validates_acceptance_of :use_of_cookies, accept: true
 
-    enum role: { admin: 0 }
-  end
+  enum role: { admin: 0 }
+end
   EOF
   end
   ### GIT ###

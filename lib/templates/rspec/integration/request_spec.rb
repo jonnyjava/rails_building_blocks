@@ -1,6 +1,6 @@
 require 'rails_helper'
 <% module_namespacing do %>
-RSpec.describe "<%= class_name.pluralize %>", <%= type_metatag(:request) %> do
+RSpec.describe '<%= class_name.pluralize %>', <%= type_metatag(:request) %> do
 
   shared_examples_for 'fully authorized' do
     let(:<%= table_name.singularize %>) { FactoryGirl.create(:<%= table_name.singularize %>) }
