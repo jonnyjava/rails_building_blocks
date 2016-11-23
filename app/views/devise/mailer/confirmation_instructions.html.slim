@@ -1,0 +1,12 @@
+- content_for :content
+  table style="width:100%;"
+    tr
+      td colspan="3" style='text-align: center;'
+        h1 = t('devise.mailer.confirmation_instructions.subject')
+    tr
+      td &nbsp;
+      td style="width:50%;font-size:14px; font-weight:normal;"
+        p = t('devise.mailer.confirmation_instructions.greeting', recipient: @resource.first_surname)
+        p = link_to t('devise.mailer.confirmation_instructions.instruction'), confirmation_url(@resource, confirmation_token: @token)
+      td &nbsp;
+= render template: "layouts/mailer"

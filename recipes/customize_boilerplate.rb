@@ -83,6 +83,18 @@ stage_three do
   # ERRORS
   copy_from_repo 'app/controllers/errors_controller.rb', repo: repo
 
+  # DEVISE MAILS
+  copy_from_repo 'app/assets/images/mails/header.png', repo: repo
+  copy_from_repo 'app/views/layouts/mailer.html.slim', repo: repo
+  remove_file 'app/views/layouts/mailer.html.erb'
+  remove_file 'app/views/layouts/mailer.text.erb'
+  copy_from_repo 'app/views/devise/mailer/confirmation_instructions.html.slim', repo: repo
+  copy_from_repo 'app/views/devise/mailer/confirmation_instructions.text.erb', repo: repo
+  copy_from_repo 'app/views/devise/mailer/password_change.html.slim', repo: repo
+  copy_from_repo 'app/views/devise/mailer/password_change.text.erb', repo: repo
+  copy_from_repo 'app/views/devise/mailer/reset_password_instructions.html.slim', repo: repo
+  copy_from_repo 'app/views/devise/mailer/reset_password_instructions.text.erb', repo: repo
+
   ### GIT ###
   git :add => '. -A'
   git :commit => '-qm "rails_apps_composer: add initializers"'
