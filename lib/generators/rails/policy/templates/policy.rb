@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 class <%= class_name %>Policy < ApplicationPolicy
   class Scope < Scope
     def resolve

@@ -16,7 +16,7 @@ class MaterialRadioButtonsInput < SimpleForm::Inputs::CollectionRadioButtonsInpu
 
   def build_nested_boolean_style_item_tag(collection_builder)
     tag = ''
-    tag << '<div class="radio radio-inline"><label class="radio_label">'.html_safe
+    tag << '<div class="radio radio-inline"><label class="radio-label">'.html_safe
     tag << collection_builder.radio_button + I18n.translate(collection_builder.value)
     tag << '<i class="input-helper"></i>'.html_safe
     tag << '</label></div>'.html_safe

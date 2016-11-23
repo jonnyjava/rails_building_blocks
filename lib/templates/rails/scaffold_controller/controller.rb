@@ -7,7 +7,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
 
   def index
-    @q = <%= plural_table_name %> = <%= orm_class.all(class_name) %>.page(params[:page])
+    @q = <%= orm_class.all(class_name) %>.page(params[:page])
     @q = @q.ransack(params[:q])
     @<%= plural_table_name %> = @q.result(distinct: true)
   end

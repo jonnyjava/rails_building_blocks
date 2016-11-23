@@ -1,6 +1,16 @@
 ignore_unreachable_actions:
-- ^devise/
-- devise#_prefixes
 - application#current_user
+- ^devise/
+- ^devise#
+- devise#_prefixes
+- ^errors#
+- .*#.*polic.*
+- .*#.*auth.*
+- .*#pundit_user
+- .*#permitted_attributes
+
 ignore_unused_routes:
 - ^devise/
+- ^errors#
+- devise#_prefixes
+- .*/policy
