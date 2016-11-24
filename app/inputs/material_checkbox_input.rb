@@ -15,11 +15,9 @@ class MaterialCheckboxInput < SimpleForm::Inputs::CollectionCheckBoxesInput
   protected
 
   def build_nested_boolean_style_item_tag(collection_builder)
-    tag = ''
-    tag << '<div class="checkbox m-b-15"><label>'.html_safe
+    tag = '<div class="checkbox m-b-15"><label>'.html_safe
     tag << collection_builder.check_box + collection_builder.text
-    tag << '<i class="input-helper"></i>'.html_safe
-    tag << '</label></div>'.html_safe
+    tag << '<i class="input-helper"></i></label></div>'.html_safe
     tag.html_safe
   end
 end

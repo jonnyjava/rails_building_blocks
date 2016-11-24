@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe <%= class_name %>Policy do
   let(:admin) { FactoryGirl.create(:admin) }
   let(:<%= file_name %>) { FactoryGirl.create(:<%= file_name %>) }
