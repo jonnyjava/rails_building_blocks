@@ -1,11 +1,20 @@
 module FormFieldsConfigHelper
+
+  def text_field_config(placeholder, options = {})
+    {
+      label: false,
+      placeholder: placeholder,
+      as: :string,
+    }.merge(options)
+  end
+
   def number_field_config(placeholder, mask, value)
     {
       as: :string,
       label: false,
       class: 'form-control input-mask',
       input_html: { data: { mask: mask, 'mask-reverse': 'true' }, class: 'js_demask', value: value },
-      placeholder: t(placeholder)
+      placeholder: placeholder
     }
   end
 

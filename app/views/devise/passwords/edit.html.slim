@@ -6,9 +6,9 @@
     #l-login.lc-block.toggled
       .lcb-form
         h1.c-corporate.m-b-30 =t('devise.passwords.edit.change_my_password')
-        - f_field = f.input :password, required: true, type: 'password', placeholder: t('password'), label: false, hint: ( t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length), input_html: { class: 'p-b-10' }
+        - f_field = f.input :password, text_field_config(t('user.password'), { required: true, type: 'password', as: :password, hint: (t('characters_minimum', chars: @minimum_password_length) })
         .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
-        - f_field = f.input :password_confirmation, required: true, type: 'password', placeholder: t('repeat_password'), label: false, hint: (t('characters_minimum', chars: @minimum_password_length) if @minimum_password_length), input_html: { class: 'p-b-10' }
+        - f_field = f.input :password_confirmation, text_field_config(t('repeat_password'), { required: true, type: 'password', as: :password, hint: (t('characters_minimum', chars: @minimum_password_length) })
         .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
         button.btn.btn-login.btn-success.btn-float.bgm-corporate
           i.zmdi.zmdi-arrow-forward

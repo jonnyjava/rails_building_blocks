@@ -3,3 +3,4 @@ es:
     one: ''
     other: 's'<%  self.shell.base.attributes.each do |attribute|%>
     <%= attribute.name%>: '<%= attribute.name%>'<%end%>
+    ransack:

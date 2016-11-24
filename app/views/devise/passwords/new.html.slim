@@ -4,7 +4,7 @@
     #l-login.lc-block.toggled
       .lcb-form
         h1.c-corporate.m-b-30 =t('devise.passwords.new.forgot_your_password')
-        - f_field = f.input :email, required: true, autofocus: true, placeholder: t('user.email'), label: false, input_html: { class: 'p-b-10' }
+        - f_field = f.input :email, text_field_config(t('user.email'), { required: true, autofocus: true })
         .m-t-10.m-b-10 = material_form_component('', 'account', f_field)
         button.btn.btn-login.btn-success.btn-float.bgm-corporate
           i.zmdi.zmdi-arrow-forward
