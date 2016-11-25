@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 1.0.2 - 2 December 2016
+- fix I18n_translations.yml generator to be able to generate a controller alone
 - complete request_spec generator adding new and create method
 - remove useless flash message
 - add authorization to controller generation
