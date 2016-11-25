@@ -61,7 +61,6 @@ stage_three do
   copy_from_repo 'app/assets/javascripts/custom_alerts.js', repo: repo
   copy_from_repo 'app/assets/javascripts/custom_charts.js', repo: repo
   copy_from_repo 'app/assets/javascripts/custom_inputmask.js', repo: repo
-  copy_from_repo 'app/assets/javascripts/custom_menu_toggler.js', repo: repo
   copy_from_repo 'app/assets/javascripts/datepicker-es.js', repo: repo
   copy_from_repo 'app/assets/javascripts/filter_cleaner.js', repo: repo
   copy_from_repo 'app/assets/javascripts/shared.js.coffee', repo: repo
