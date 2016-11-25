@@ -1,4 +1,8 @@
 # CHANGELOG
+
+## 1.0.1 - November 25, 2016
+- Add simplecov gem in gemfile recipe
+
 ## 1.0.0 - November 25, 2016
 
 First stable release! It contains:

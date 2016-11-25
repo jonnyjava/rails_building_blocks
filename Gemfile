@@ -53,5 +53,6 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'simplecov', require: false
   gem 'fuubar'
 end
