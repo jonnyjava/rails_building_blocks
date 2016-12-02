@@ -1,4 +1,14 @@
 # CHANGELOG
+
+## 1.0.2 - 2 December 2016
+- complete request_spec generator adding new and create method
+- remove useless flash message
+- add authorization to controller generation
+- remove render from error_controller methods
+
+## 1.0.1 - November 25, 2016
+- Add simplecov gem in gemfile recipe
+
 ## 1.0.0 - November 25, 2016
 
 First stable release! It contains:

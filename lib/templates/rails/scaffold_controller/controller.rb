@@ -5,11 +5,13 @@ require_dependency "<%= namespaced_path %>/application_controller"
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized
 
   def index
     @q = <%= orm_class.all(class_name) %>.page(params[:page])
     @q = @q.ransack(params[:q])
     @<%= plural_table_name %> = @q.result(distinct: true)
+    authorize @<%= plural_table_name %>
   end
 
   def show
@@ -17,6 +19,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def new
     @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
+    authorize @<%= singular_table_name %>
   end
 
   def edit
@@ -24,6 +27,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def create
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
+    authorize @<%= singular_table_name %>
     if @<%= orm_instance.save %>
       redirect_to @<%= singular_table_name %>
     else
@@ -48,6 +52,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
   def set_<%= singular_table_name %>
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
+    authorize @<%= singular_table_name %>
   end
 
   def <%= "#{singular_table_name}_params" %>

@@ -2,19 +2,19 @@ class ErrorsController < ApplicationController
   layout 'error_layout'
   skip_before_filter :authenticate_user!
 
-  def render_error_401
+  def error_401
     respond_to_error(401)
   end
 
-  def render_error_404
+  def error_404
     respond_to_error(404)
   end
 
-  def render_error_422
+  def error_422
     respond_to_error(422)
   end
 
-  def render_error_500
+  def error_500
     respond_to_error(500)
   end
 
