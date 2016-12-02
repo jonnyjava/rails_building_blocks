@@ -13,6 +13,13 @@ RSpec.describe '<%= class_name.pluralize %>', <%= type_metatag(:request) %> do
       end
     end
 
+    describe 'GET #new' do
+      it 'is authorized' do
+        get new_<%= table_name.singularize %>_path
+        expect(response).not_to have_http_status(:unauthorized)
+      end
+    end
+
     describe 'GET #show' do
       it 'is authorized' do
         get <%= table_name.singularize %>_path(<%= table_name.singularize %>)
@@ -26,6 +33,14 @@ RSpec.describe '<%= class_name.pluralize %>', <%= type_metatag(:request) %> do
         expect(response).not_to have_http_status(:unauthorized)
       end
     end
+
+    describe 'POST #create' do
+      it 'is authorized' do
+        post <%= table_name %>_path(<%= table_name.singularize %>: <%= table_name.singularize %>_attributes)
+        expect(response).not_to have_http_status(:unauthorized)
+      end
+    end
+
     describe 'PUT #update' do
       it 'is authorized' do
         put <%= table_name.singularize %>_path(id: <%= table_name.singularize %>.to_param, <%= table_name.singularize %>: <%= table_name.singularize %>_attributes)
