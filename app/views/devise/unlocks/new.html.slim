@@ -1,0 +1,11 @@
+.login-content
+  = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+    #l-login.lc-block.toggled
+      p.hint = t('devise.unlocks.hint')
+      = render 'layouts/flashes'
+      .lcb-form
+        = f.error_notification
+        = f.full_error :unlock_token
+        = material_form_control(f, :email, text_field_config(nil).merge({ label: t('user.email'), required: true, autofocus: true }))
+        = button_tag t('devise.unlocks.new.resend_unlock_instructions'), class: 'btn btn-primary btn-lg'
+      = render "devise/shared/links"

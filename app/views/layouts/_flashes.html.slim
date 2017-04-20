@@ -1,0 +1,7 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    .hidden-print.alert.alert-dismissable class="alert-#{name == 'notice' ? 'success' : 'danger'}"
+      button.close type="button" data-dismiss="alert" aria-hidden="true"
+        &times;
+      .content
+        = msg

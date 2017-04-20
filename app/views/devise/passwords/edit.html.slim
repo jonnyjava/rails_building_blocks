@@ -1,15 +1,12 @@
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  = f.input :reset_password_token, as: :hidden
-  = f.full_error :reset_password_token
-  .login-content
+.login-content
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = f.error_notification
+    = f.input :reset_password_token, as: :hidden
+    = f.full_error :reset_password_token
     #l-login.lc-block.toggled
       .lcb-form
-        h1.c-corporate.m-b-30 =t('devise.passwords.edit.change_my_password')
-        - f_field = f.input :password, text_field_config(t('user.password'), { required: true, type: 'password', as: :password, hint: (t('characters_minimum', chars: @minimum_password_length) })
-        .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
-        - f_field = f.input :password_confirmation, text_field_config(t('repeat_password'), { required: true, type: 'password', as: :password, hint: (t('characters_minimum', chars: @minimum_password_length) })
-        .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
-        button.btn.btn-login.btn-success.btn-float.bgm-corporate
-          i.zmdi.zmdi-arrow-forward
+        h1 = t('devise.passwords.edit.change_my_password')
+          = material_form_control(f, :password, text_field_config(nil).merge({ label: t('user.password'), required: true, type: 'password', as: :password, hint: t('characters_minimum', chars: @minimum_password_length) }))
+          = material_form_control(f, :password_confirmation, text_field_config(nil).merge({ label: t('repeat_password'), required: true, type: 'password', as: :password, hint: t('characters_minimum', chars: @minimum_password_length) }))
+          = button_tag t('devise.passwords.edit.change_my_password'), class: 'btn btn-primary btn-lg'
       = render "devise/shared/links"
