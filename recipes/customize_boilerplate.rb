@@ -74,7 +74,6 @@ stage_three do
 
   # USER STUFF
   copy_from_repo 'spec/models/user_spec.rb', repo: repo
-  copy_from_repo 'spec/decorators/user_decorator.rb', repo: repo
 
   # DASHBOARD
   copy_from_repo 'app/controllers/dashboard_controller.rb', repo: repo
