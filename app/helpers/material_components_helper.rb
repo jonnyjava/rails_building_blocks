@@ -68,7 +68,7 @@ module MaterialComponentsHelper
 
   def material_icon_for_panel(icon)
     content_tag :div, class: 'chart m-l-30 m-r-30' do
-      concat(content_tag(:i, '', class: "f-40 c-white zmdi zmdi-#{icon}"))
+      concat(content_tag(:i, '', class: "c-white zmdi zmdi-#{icon}"))
     end
   end
 

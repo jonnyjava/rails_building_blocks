@@ -1,16 +1,17 @@
 // THEME VENDOR
 //= require bower_components/fullcalendar/dist/fullcalendar.min.css
 //= require bower_components/animate.css/animate.min.css
-
 //= require bower_components/sweetalert2/dist/sweetalert2.min.css
-
 //= require bower_components/bootstrap-select/dist/css/bootstrap-select.css
 //= require bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css
 //= require bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css
 //= require bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+//= require bower_components/nouislider/distribute/nouislider.min.css
 // THEME
 //= require summernote/dist/summernote.css
 //= require material_ui/theme
+//= require_tree ./app
+// app folder is where all css page-specific customizations should go
 
 @import 'corporate-skin';
 
@@ -24,33 +25,6 @@
   }
 }
 
-//.col-xs-12 .dl-horizontal dt {
-//  overflow: visible;
-//  width: 25%;
-//}
-//
-//.col-xs-6 .dl-horizontal dt {
-//  overflow: visible;
-//  width: 50%;
-//}
-//
-//.lc-block {
-//  width: 600px;
-//}
-//
-//#profile-main {
-//  min-height: 650px;
-//  padding-bottom: 20px;
-//
-//  .pm-overview {
-//    background-color: transparent;
-//  }
-//}
-//
-//.input-group-addon {
-//  padding-top: 1.5em;
-//}
-//
 .radio-label {
   min-width: 4.25em;
 }
@@ -59,12 +33,6 @@
   padding-left: 0;
   padding-right: 30px;
 }
-//
-//.fileinput .fileinput-preview {
-//  height: auto;
-//  min-height: 250px;
-//  width: 250px;
-//}
 
 //FIXES TO THEME VERSION 1.7
 
@@ -76,68 +44,24 @@
   top: 12px;
 }
 
-//ADDED CLASSES
-.f-40 {
-  font-size: 40px !important;
+.pti-footer {
+  min-height: 90px;
 }
 
-//.submenu-dropdown {
-//  width: 100%;
-//
-//  li {
-//    clear: both;
-//    display: block;
-//    padding: .75em;
-//  }
-//}
-//
-//.help-system {
-//  cursor: help;
-//  display: inline-block;
-//  min-width: 2em;
-//  text-align: center;
-//}
-//
-//.inline {
-//  display: inline;
-//}
-//
-//.min-h-930 {
-//  min-height: 930px !important;
-//}
-//
-//.min-w-100 {
-//  min-width: 10rem;
-//}
-//
-//.no-shadow {
-//  box-shadow: none;
-//}
-//
-//.p-8 {
-//  padding: 8px !important;
-//}
-//
-//.status-toggler {
-//  padding: 3px 6px;
-//}
-//
-//.v-middle {
-//  vertical-align: middle !important;
-//}
-//
-//.google-map {
-//  background-size: cover;
-//  height: 0;
-//  overflow: hidden;
-//  padding-bottom: 40%;
-//}
+.t-view::before {
+  top: 15px;
+}
+//ADDED CLASSES
 
 .bar-custom-label {
   color: $black;
   font-size: 1.25em;
   padding: 2px;
   text-align: left;
+}
+
+.no-shadow {
+  box-shadow: none;
 }
 
 .pie-custom-label {
@@ -194,4 +118,29 @@
 .notification-link:hover {
   background-color: $black-shadow;
   cursor: pointer;
+}
+
+.money-input {
+  width: 70px !important;
+}
+
+.inline-component-with-icon span.input-group-addon > .zmdi {
+  top: 0;
+}
+
+.flexible {
+  display: flex;
+}
+
+.t-view .tvb-stats > li.tvbs-alert {
+  background-color: $corporate-hue;
+  border-color: $white;
+  color: $white;
+  font-weight: bolder;
+}
+
+.t-view .tvb-stats > li.tvbs-corporate {
+  border-color: $corporate-hue;
+  color: $corporate-hue;
+  font-weight: bolder;
 }
