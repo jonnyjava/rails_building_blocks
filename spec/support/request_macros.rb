@@ -1,7 +1,7 @@
 module RequestMacros
   def login_admin
     before do
-      @current_user = FactoryGirl.create(:admin)
+      @current_user = create(:admin)
       post user_session_path, params: {
         'user[email]' => @current_user.email,
         'user[password]' => @current_user.password

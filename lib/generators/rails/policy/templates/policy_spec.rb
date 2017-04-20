@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe <%= class_name %>Policy do
-  let(:admin) { FactoryGirl.create(:admin) }
-  let(:<%= file_name %>) { FactoryGirl.create(:<%= file_name %>) }
+  let(:admin) { create(:admin) }
+  let(:<%= file_name %>) { create(:<%= file_name %>) }
 
   shared_examples_for 'someone authorized' do
     it { is_expected.to allow_action(:index) }
