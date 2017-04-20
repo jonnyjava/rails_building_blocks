@@ -82,6 +82,9 @@ stage_three do
   # ERRORS
   copy_from_repo 'app/controllers/errors_controller.rb', repo: repo
 
+  # POLICIES
+  copy_from_repo 'app/policies/application_policy.rb', repo: repo
+
   # DEVISE MAILS
   copy_from_repo 'app/assets/images/mails/header.png', repo: repo
   copy_from_repo 'app/views/layouts/mailer.html.slim', repo: repo
