@@ -37,7 +37,10 @@ stage_two do
          raise "Please update rvm gem to 1.11.3.5 or newer"
        end
      begin
-       RVM.gemset_use! app_name
+      say_wizard "**************SELECTING GEMSET CALLED #{app_name}*******************"
+        RVM.gemset_use! app_name
+        say_wizard "**************INSTALLING BUNDLER*******************"
+        run "gem install bundler"
      rescue => e
        say_wizard "rvm failure: unable to use gemset #{app_name}, reason: #{e}"
        raise
