@@ -14,12 +14,12 @@ module FormFieldsConfigHelper
       label: false,
       class: 'form-control input-mask',
       input_html: { data: { mask: mask, 'mask-reverse': 'true' }, class: 'js_demask', value: value },
-      placeholder: placeholder
+      placeholder: t(placeholder)
     }
   end
 
   def datepicker_config(value)
-    value = value.strftime('%d/%m/%Y') if value
+    value = value.to_date.strftime('%d/%m/%Y') if value
     {
       as: :string,
       class: 'form-control date-picker',

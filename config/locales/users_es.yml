@@ -1,0 +1,17 @@
+es:
+  user:
+    one: 'Usuario'
+    other: 'Usuarios'
+    email: 'Email'
+    first_surname: 'Primer apellido'
+    name: 'Nombre'
+    password: 'Clave de acceso'
+    password_confirmation: 'Confirmar la clave de acceso'
+    phone: 'Telefono'
+    role: 'rol'
+    second_surname: 'Segundo apellido'
+    use_of_cookies: 'He leído y acepto la politica de cookies'
+    ransack:
+      name_or_surnames_cont: 'El nombre o el apellido contienen:'
+      email_cont: 'El email contiene:'
+      phone_cont: 'El telefono contiene los digitos:'

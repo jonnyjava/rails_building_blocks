@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { FactoryGirl.build(:admin) }
+  subject { build(:admin) }
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:first_surname) }
   it { is_expected.to validate_presence_of(:email) }

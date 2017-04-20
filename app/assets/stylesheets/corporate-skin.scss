@@ -1,8 +1,4 @@
-$black: #000;
-$black-shadow: rgba(0, 0, 0, .075);
-$corporate-hue: #c11933;
-$light-corporate-hue: #48a590;
-$white: #fff;
+@import 'variables';
 
 .checkbox input:checked + .input-helper::before {
   background-color: $corporate-hue;

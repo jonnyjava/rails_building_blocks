@@ -15,6 +15,7 @@ es:
   country: 'País'
   delete: 'Borrar'
   delete_selected: 'Borrar seleccionados'
+  download_file: 'Descargar archivo'
   edit: 'Modificar'
   female: 'Mujer'
   from: 'Desde'

@@ -3,6 +3,7 @@ stage_three do
   repo = 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
 
   # HELPERS
+  copy_from_repo 'app/helpers/application_helper.rb', repo: repo
   copy_from_repo 'app/helpers/form_fields_config_helper.rb', repo: repo
   copy_from_repo 'app/helpers/material_carrierwave_components_helper.rb', repo: repo
   copy_from_repo 'app/helpers/material_components_helper.rb', repo: repo

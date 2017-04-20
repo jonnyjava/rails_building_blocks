@@ -15,27 +15,41 @@ module MaterialComponentsHelper
 
   def material_button(text, bg_color, icon, type, data = {})
     content_tag :button, class: "btn btn-default waves-effect #{bg_color}", type: type, data: data do
-      concat(content_tag(:span, '', class: "zmdi zmdi-#{icon}"))
+      concat(content_tag(:span, '', class: "zmdi zmdi-#{icon}") + ' ')
       concat(text) if text.present?
     end
   end
 
   def material_delete_button(destination)
-    content_tag :a, '', href: destination, data: { confirm: 'Are you sure?', method: :delete } do
-      concat(material_button(nil, 'bgm-red', 'delete', 'button'))
+    a_data = { confirm: 'Are you sure?',
+               method: :delete,
+               toggle: 'tooltip',
+               placement: 'top',
+               'original-title' => t('icons.delete') }
+    content_tag :a, '', href: destination, data: a_data do
+      concat(material_button(nil, 'btn-danger', 'delete', 'button'))
     end
   end
 
-  def material_text_button(destination, text, bg_color, icon)
-    content_tag :a, '', href: destination do
-      concat(material_button(text, "btn-icon-text #{bg_color}", icon, 'button'))
+  def material_link_to(destination, options = {})
+    material_link_to_default_options.reverse_merge(options)
+    options[:data] = { toggle: 'tooltip', placement: 'top', 'original-title' => t("icons.#{options[:icon]}") } if options[:icon].present?
+    a_class = "btn btn-default waves-effect #{options[:bg_color]}"
+    content_tag :a, '', class: a_class, href: destination, target: options[:target], data: options[:data] do
+      concat(content_tag(:span, '', class: "zmdi zmdi-#{options[:icon]}") + ' ') if options[:icon].present?
+      concat(options[:anchor]) if options[:anchor].present?
     end
   end
 
-  def material_icon_button(destination, bg_color, icon, target = '_self')
-    content_tag :a, '', href: destination, target: target do
-      concat(material_button(nil, bg_color, icon, 'button'))
-    end
+  def material_link_to_default_options
+    {
+      anchor: '',
+      bg_color: '',
+      data: '',
+      icon: '',
+      icon_class: '',
+      target: '_self'
+    }
   end
 
   def material_mini_counter_graph(percent, value, title)
@@ -54,7 +68,7 @@ module MaterialComponentsHelper
 
   def material_icon_for_panel(icon)
     content_tag :div, class: 'chart m-l-30 m-r-30' do
-      concat(content_tag(:i, '', class: "f-40 c-white zmdi zmdi-#{icon}"))
+      concat(content_tag(:i, '', class: "c-white zmdi zmdi-#{icon}"))
     end
   end
 

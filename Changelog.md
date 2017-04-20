@@ -1,5 +1,15 @@
 # CHANGELOG
-
+## 1.1.0 - 20 April 2017
+- update rubocop version in gemfile
+- fix missing bundler gem installation in a newly created gemset
+- fix missing user_decorator_spec download removing it because is useless
+- fix and improve material helpers
+- clean css from useless rules or comments
+- refactor devise views with new form helpers
+- introduce FactoryGirl syntax methods
+- fix missing application_policy file
+- add basic user locale file
+-
 ## 1.0.2 - 2 December 2016
 - fix I18n_translations.yml generator to be able to generate a controller alone
 - complete request_spec generator adding new and create method

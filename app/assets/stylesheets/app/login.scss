@@ -1,0 +1,81 @@
+@import 'variables';
+
+body.login {
+  padding: 40px 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $gray;
+  }
+
+  h1 {
+    color: darken($gray, 8%);
+    margin-bottom: 30px;
+  }
+
+  .login-content {
+    background: none;
+    min-height: 0;
+
+    .hint {
+      font-size: 15px;
+      margin: 20px 0;
+    }
+
+    &::before {
+      height: auto;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+  }
+
+  .devise-links {
+    margin: 15px 0 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 5px;
+
+      a i {
+        padding-right: 6px;
+      }
+    }
+  }
+
+  footer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    .footer-menu {
+      border-top: 1px solid $dark-gray;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        font-size: 11px;
+        line-height: 30px;
+        list-style: none;
+        padding-left: 10px;
+
+        a:link,
+        a:visited {
+          color: $dark-gray;
+        }
+
+        a:hover,
+        a:active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

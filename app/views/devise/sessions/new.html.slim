@@ -1,15 +1,13 @@
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .login-content
+.login-content
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     #l-login.lc-block.toggled
+      = render 'layouts/flashes'
       .lcb-form
-        h1.c-corporate =t('devise.sessions.new.sign_in')
-        - f_field = f.input :email, text_field_config(t('user.email'), { required: true, autofocus: true })
-        .m-t-10.m-b-10 = material_form_component('', 'account', f_field)
-        - f_field = f.input :password, text_field_config(t('user.password'), { required: true, type: 'password', as: :password })
-        .m-t-10.m-b-10 = material_form_component('', 'key', f_field)
+        = material_form_control(f, :email, text_field_config(nil).merge({ label: t('user.email'), required: :true, autofocus: true, as: :email }))
+        = material_form_control(f, :password, text_field_config(nil).merge({ label: t('user.password'), required: :true, as: :password }))
         - if devise_mapping.rememberable?
           - f_checkbox = f.check_box :remember_me
           = material_checkbox_component(t('remember_me'), f, :remember_me, f_checkbox)
-        button.btn.btn-login.btn-success.btn-float.bgm-corporate
-          i.zmdi.zmdi-arrow-forward
+
+        = button_tag t('devise.sessions.new.sign_in'), class: 'btn btn-primary btn-lg'
       = render "devise/shared/links"

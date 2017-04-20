@@ -21,6 +21,7 @@ stage_three do
   copy_from_repo 'config/locales/devise.es.yml', repo: repo
   copy_from_repo 'config/locales/simple_form.en.yml', repo: repo
   copy_from_repo 'config/locales/simple_form.es.yml', repo: repo
+  copy_from_repo 'config/locales/users_es.yml', repo: repo
 
   # GENERATORS
   copy_from_repo 'lib/generators/rails/frontend_extras/templates/i18n_translations.rb', repo: repo
@@ -74,7 +75,6 @@ stage_three do
 
   # USER STUFF
   copy_from_repo 'spec/models/user_spec.rb', repo: repo
-  copy_from_repo 'spec/decorators/user_decorator.rb', repo: repo
 
   # DASHBOARD
   copy_from_repo 'app/controllers/dashboard_controller.rb', repo: repo
@@ -82,6 +82,9 @@ stage_three do
 
   # ERRORS
   copy_from_repo 'app/controllers/errors_controller.rb', repo: repo
+
+  # POLICIES
+  copy_from_repo 'app/policies/application_policy.rb', repo: repo
 
   # DEVISE MAILS
   copy_from_repo 'app/assets/images/mails/header.png', repo: repo

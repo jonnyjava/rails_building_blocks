@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe '<%= class_name.pluralize %>', <%= type_metatag(:request) %> do
 
   shared_examples_for 'fully authorized' do
-    let(:<%= table_name.singularize %>) { FactoryGirl.create(:<%= table_name.singularize %>) }
-    let(:<%= table_name.singularize %>_attributes) { { <%= table_name.singularize %>: FactoryGirl.attributes_for(:<%= table_name.singularize %>) } }
+    let(:<%= table_name.singularize %>) { create(:<%= table_name.singularize %>) }
+    let(:<%= table_name.singularize %>_attributes) { { <%= table_name.singularize %>: attributes_for(:<%= table_name.singularize %>) } }
 
     describe 'GET #index' do
       it 'is authorized' do

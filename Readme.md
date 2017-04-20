@@ -15,6 +15,7 @@ In your project directory execute this commands :
 - If needed: `rm -rf my_awesome_project`
 - This command will create the rails template script: `rails_apps_composer template my_app_composer.rb -d rails_building_blocks/material_backoffice_cookbook.yaml -l rails_building_blocks/recipes/`
 - Generate the app! `rails new my_awesome_project -m my_app_composer.rb`
+- The project ships with rubocop, run this command to fix some style issues that need to be corrected before starting: `rubocop -a -f fuubar ; scss-lint`
 
 This file `material_backoffice_cookbook.yaml` contains the basic sets of answers for the composer wizard. Change it only if you know what you are doing!
 

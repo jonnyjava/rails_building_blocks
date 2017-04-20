@@ -15,9 +15,10 @@ es:
     confirmations:
       confirmed: Tu cuenta ha sido confirmada satisfactoriamente.
       new:
-        resend_confirmation_instructions: Reenviar instrucciones de confirmación
+        resend_confirmation_instructions: Reenviar instrucciones
       send_instructions: Vas a recibir un correo con instrucciones sobre cómo confirmar tu cuenta en unos minutos.
       send_paranoid_instructions: Si tu correo existe en nuestra base de datos, en unos minutos recibirás un correo con instrucciones sobre cómo confirmar tu cuenta.
+      hint: '¿No te ha llegado el email para confirmar tu cuenta? Introduce tu dirección de email a continuación y te reenviaremos el enlace.'
     failure:
       already_authenticated: Ya has iniciado sesión.
       inactive: Tu cuenta aún no ha sido activada.
@@ -55,6 +56,7 @@ es:
       failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
       success: Has sido autorizado satisfactoriamente en la cuenta %{kind}.
     passwords:
+      hint: 'Si has olvidado tu contraseña, solo tienes que introducir tu dirección de email a continuación y te enviaremos las instrucciones para recuperarla.'
       edit:
         change_my_password: Cambiar mi contraseña
         change_your_password: Cambie su contraseña
@@ -103,6 +105,7 @@ es:
         sign_in_with_provider: Iniciar sesión con %{provider}
         sign_up: Registrarse
     unlocks:
+      hint: '¿No te ha llegado el correo para desbloquear tu cuenta? Introduce tu email a continuación y te reenviaremos las instrucciones.'
       new:
         resend_unlock_instructions: Reenviar instrucciones para desbloquear
       send_instructions: Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.

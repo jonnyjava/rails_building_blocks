@@ -6,6 +6,18 @@ module MaterialFormComponentsHelper
     end
   end
 
+  def material_form_control(f, field_name, opts = {})
+    opts.reverse_merge!(label: '',
+                        input_wrapper: true,
+                        input_html: {})
+    input_method = opts[:input_wrapper] ? :input : :input_field
+    klass = f.object.is_a?(ActiveRecord::Base) && f.object.errors.include?(field_name) ? '' : 'fg-line'
+    content_tag :div, class: "form-group #{klass}" do
+      concat(content_tag(:label, opts[:label]))
+      concat(f.send(input_method, field_name, opts.merge(label: false).merge(opts[:input_html])))
+    end
+  end
+
   def material_icon_component(icon)
     content_tag :span, class: 'input-group-addon' do
       content_tag :i, '', class: "zmdi zmdi-#{icon}"
