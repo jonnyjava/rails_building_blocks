@@ -37,7 +37,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'traceroute', git: 'git://github.com/distributedlife/traceroute'
   gem 'web-console', '~> 2.0'
 end
 
