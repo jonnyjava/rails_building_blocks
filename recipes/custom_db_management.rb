@@ -1,17 +1,40 @@
 ### CREATE DATABASE ###
 stage_two do
-  say_wizard "---------------CONFIGURING DATABASE----------------------"
+  say_wizard "---------------REWRITING DATABASE.YML----------------------"
+  remove_file 'config/database.yml'
+  create_file 'config/database.yml' do <<-EOF
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: #{app_name}_development
+
+test:
+  <<: *default
+  database: #{app_name}_test
+
+staging:
+  <<: *default
+  database: #{app_name}_staging
+
+production:
+  <<: *default
+  database: #{app_name}_production
+  EOF
+  end
+
+  say_wizard "---------------CREATING LOCAL_ENV----------------------"
   mysql_username = prefs[:mysql_username] || ask_wizard("Username for MySQL? (leave blank to use the app name)")
-  gsub_file "config/database.yml", /username: .*/, "username: #{mysql_username}"
-
   mysql_password = prefs[:mysql_password] || ask_wizard("Password for MySQL user #{mysql_username}?")
-  gsub_file "config/database.yml", /password: [a-z 0-9]*/i, "password: #{mysql_password}"
-
-  say_wizard "-------SET CONFIG/DATABASE.YML FOR USERNAME/PASSWORD #{mysql_username}/#{mysql_password}"
-
-  gsub_file "config/database.yml", /database: myapp_development/, "database: #{app_name}_development"
-  gsub_file "config/database.yml", /database: myapp_test/,        "database: #{app_name}_test"
-  gsub_file "config/database.yml", /database: myapp_production/,  "database: #{app_name}_production"
+  create_file 'config/local_env.yml' do <<-EOF
+DB_PASSWORD: '#{mysql_password}'
+DB_USERNAME: '#{mysql_username}'
+  EOF
+  end
 
   ## Git
   git :add => '-A' if prefer :git, true
