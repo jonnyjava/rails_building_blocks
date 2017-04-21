@@ -2,6 +2,8 @@ say_wizard "---------------BUILDING MY OWN GEMFILE----------------------"
 stage_two do
   remove_file 'Gemfile'
   copy_from_repo 'Gemfile', repo: 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
+  RVM.gemset_use! app_name
+  run "bundle install"
 end
 
 ## Git
