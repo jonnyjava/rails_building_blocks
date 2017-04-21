@@ -99,6 +99,35 @@ stage_three do
   git :commit => '-qm "rails_apps_composer: add initializers"'
 end
 
+stage_four do
+  #say_recipe '-------------- RUNNING SEEDS --------------'
+  run 'rails db:migrate'
+  run 'rails db:seed'
+
+  say_recipe "--------------RUNNING PUNDIT GENERATOR-------------------"
+  run 'rails g pundit:install'
+  say_recipe "--------------RUNNING USER SCAFFOLDS-------------------"
+  run 'rails g scaffold_controller User email first_surname name password password_confirmation phone role second_surname use_of_cookies'
+  remove_file 'config/locales/users_es.yml'
+  copy_from_repo 'config/locales/users_es.yml', repo: 'https://raw.githubusercontent.com/jonnyjava/rails_building_blocks/master/'
+  say_recipe "--------------OVERRIDING USER MODEL-------------------"
+  remove_file 'app/models/user.rb'
+  create_file 'app/models/user.rb' do <<-EOF
+class User < ApplicationRecord
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+
+  validates :name, :first_surname, presence: true
+  validates_acceptance_of :use_of_cookies, accept: true
+
+  enum role: { admin: 0 }
+end
+  EOF
+  end
+  ### GIT ###
+  git add: '-A'
+  git commit: '-qm "rails_apps_composer: user scaffolds"'
+end
+
 __END__
 
 name: customize_boilerplate
@@ -106,5 +135,5 @@ description: "add, delete or copy custom files from repo"
 author: jonnyjava.net
 
 category: homemade
-requires: [devise, extras]
-run_after: [devise, extras]
+requires: [devise, extras, custom_db_management]
+run_after: [devise, extras, custom_devise, custom_db_management]
