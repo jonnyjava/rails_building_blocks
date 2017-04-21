@@ -1,4 +1,12 @@
 # CHANGELOG
+## 1.1.1 - 21 April 2017
+- override database.yml using local_env variables
+- update readme with latest rails gem
+- move boilerplate customization where they belong to be executed at the end
+- launch bundle after creating a custom gemset
+- remove useless files and recipes
+- remove traceroute from gemfile because is not mantained anymore
+
 ## 1.1.0 - 20 April 2017
 - update rubocop version in gemfile
 - fix missing bundler gem installation in a newly created gemset

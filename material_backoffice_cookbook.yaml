@@ -1,6 +1,5 @@
 recipes:
 - micro_core
-- readme
 - gemset
 - custom_gemfile
 - tests

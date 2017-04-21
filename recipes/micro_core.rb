@@ -7,5 +7,5 @@ name: core
 description: "Select all core recipes."
 author: jonnyjava
 
-requires: [git, gems, email, init, analytics, deployment, extras]
+requires: [git, gems, init, deployment, extras]
 category: collections

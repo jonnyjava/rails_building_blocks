@@ -5,7 +5,7 @@ stage_two do
      # http://blog.thefrontiergroup.com.au/2010/12/a-brief-introduction-to-the-rvm-ruby-api/
      # https://rvm.io/integration/passenger
 
-    # say_wizard "creating bundle configuration file"
+    say_wizard "creating bundle configuration file"
       create_file '.gemrc'
       append_to_file '.gemrc' do
         'install: --no-rdoc --no-ri'
@@ -66,5 +66,5 @@ description: "Creates and use a specific gemset for the project"
 author: jonnyjava.net
 
 category: homemade
-requires: [gems]
-run_after: [extras, gems]
+requires: [micro_core]
+run_after: [git]
