@@ -4,7 +4,7 @@ This is an application of [Rails App Composer](https://github.com/RailsApps/rail
 
 ## How to use this
 - Create a new gemset called `app_composer`
-- `gem install rails -v 5.0.0.1 --no-ri --no-rdoc`
+- `gem install rails -v 5.0.2 --no-ri --no-rdoc`
 - `gem install rails_apps_composer`
 - `gem install rubyzip`
 - Clone the project and modify the recipes as you prefer. Read the tutorial linked above to know how to do it.
