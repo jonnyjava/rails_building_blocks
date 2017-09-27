@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'bower-rails'
-gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'devise-i18n'
-gem 'draper', '~> 3.0.0.pre1'
+gem 'draper'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'kaminari'
@@ -14,7 +12,7 @@ gem 'pundit'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'ransack'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
@@ -45,7 +43,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'rubocop', '~> 0.48.1', require: false
+  gem 'rubocop', '~> 0.50.0', require: false
   gem 'rubocop-rspec'
   gem 'shoulda-matchers', require: false
 end
